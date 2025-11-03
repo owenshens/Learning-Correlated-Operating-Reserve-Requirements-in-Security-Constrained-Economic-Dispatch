@@ -1,0 +1,212 @@
+# Hardware and Solver Configuration
+# ===================================
+# Hardware specs and solver-specific settings
+
+# Hardware specifications
+hardware:
+  cpu:
+    cores: 8
+    threads: 16
+    model: "Apple M-series / Intel Xeon"
+
+  memory:
+    total_gb: 64
+    available_gb: 48
+    swap_gb: 32
+
+  storage:
+    results_dir_gb: 100  # Space allocated for results
+
+  gpu:
+    available: false
+    model: null
+
+# Solver-specific settings
+solver_backends:
+  # CVXOPT (default for DirectNominalSolver)
+  cvxopt:
+    enabled: true
+    show_progress: false
+    abstol: 1.0e-7
+    reltol: 1.0e-6
+    feastol: 1.0e-7
+    maxiters: 100
+    refinement: 1
+
+  # CVXPY (for benchmark comparison)
+  cvxpy:
+    enabled: true
+    solver: "ECOS"  # Options: ECOS, OSQP, SCS, MOSEK, GUROBI
+    verbose: false
+    max_iters: 10000
+    eps_abs: 1.0e-6
+    eps_rel: 1.0e-6
+
+  # MOSEK (commercial, high-performance)
+  mosek:
+    enabled: false  # Set to true if license available
+    license_path: null
+    num_threads: 8
+    presolve: true
+    intpnt_co_tol_rel_gap: 1.0e-8
+    intpnt_co_tol_pfeas: 1.0e-8
+    intpnt_co_tol_dfeas: 1.0e-8
+
+  # Gurobi (commercial, high-performance)
+  gurobi:
+    enabled: false  # Set to true if license available
+    license_path: null
+    threads: 8
+    method: -1  # -1=auto, 0=primal simplex, 1=dual simplex, 2=barrier
+    crossover: -1
+    feastol: 1.0e-6
+    optol: 1.0e-6
+
+  # CLARABEL (modern Rust-based solver)
+  clarabel:
+    enabled: true
+    tol_gap_abs: 1.0e-8
+    tol_gap_rel: 1.0e-8
+    tol_feas: 1.0e-8
+    max_iter: 200
+    verbose: false
+
+  # OSQP (for large-scale QP)
+  osqp:
+    enabled: true
+    eps_abs: 1.0e-5
+    eps_rel: 1.0e-5
+    max_iter: 10000
+    polish: true
+    verbose: false
+    adaptive_rho: true
+
+# Performance tuning
+performance:
+  # Memory management
+  sparse_threshold: 0.3  # Use sparse matrices if density < 30%
+  array_chunk_size: 10000  # For large trajectory storage
+
+  # Parallelization
+  parallel_experiments: true
+  max_parallel_solves: 4
+  use_multiprocessing: true
+
+  # Timeouts
+  timeout_small_problem: 60  # seconds
+  timeout_medium_problem: 300
+  timeout_large_problem: 3600
+
+  # Caching
+  cache_problem_matrices: true
+  cache_factorizations: true
+
+# Numerical stability
+numerical:
+  regularization_epsilon: 1.0e-8  # Minimum eigenvalue for PSD
+  condition_number_threshold: 1.0e12  # Warn if condition > this
+  zero_tolerance: 1.0e-12
+  infinity_threshold: 1.0e10
+
+  # Random number generation
+  random_seed_offset: 1000  # Offset for reproducibility across experiments
+
+# Logging and monitoring
+monitoring:
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_to_console: true
+  log_to_file: true
+  log_rotation: true
+  max_log_size_mb: 100
+
+  # Performance monitoring
+  track_memory_usage: true
+  track_cpu_usage: true
+  profiling_enabled: false  # Enable for detailed profiling
+
+  # Progress bars
+  show_progress_bars: true
+  progress_update_interval: 10  # iterations
+
+# Data management
+data:
+  # Storage format preferences
+  prefer_hdf5: true  # Use HDF5 over JSON when both available
+  compress_hdf5: true
+  compression_level: 6  # gzip compression (1-9)
+
+  # Archival
+  archive_raw_results: true
+  archive_intermediate_data: false
+  auto_cleanup_old_results: false
+  max_results_age_days: 90
+
+# Experiment-specific hardware limits
+experiment_limits:
+  category_I:
+    max_memory_gb: 8
+    max_time_minutes: 30
+
+  category_II:
+    max_memory_gb: 16
+    max_time_minutes: 60
+
+  category_III:
+    max_memory_gb: 32
+    max_time_minutes: 240  # 4 hours
+
+  category_IV:
+    max_memory_gb: 48
+    max_time_minutes: 480  # 8 hours
+
+  category_V:
+    max_memory_gb: 16
+    max_time_minutes: 120
+
+  category_VI:
+    max_memory_gb: 16
+    max_time_minutes: 60
+
+  category_VII:
+    max_memory_gb: 24
+    max_time_minutes: 180
+
+# Fallback strategies
+fallback:
+  # If solver fails
+  on_solver_failure:
+    retry_count: 3
+    relax_tolerance: true
+    tolerance_multiplier: 10.0
+    switch_solver: true
+    solver_preference: ["MOSEK", "GUROBI", "OSQP", "CVXOPT"]
+
+  # If memory exceeded
+  on_memory_exceeded:
+    reduce_problem_size: true
+    use_sparse_storage: true
+    enable_disk_swap: false
+    clear_cache: true
+
+  # If timeout
+  on_timeout:
+    save_partial_results: true
+    early_termination: true
+    return_best_iterate: true
+
+# Quality assurance
+quality_assurance:
+  # Verify solver outputs
+  verify_feasibility: true
+  verify_optimality: false  # Expensive, only for critical experiments
+  feasibility_tolerance: 1.0e-5
+
+  # Numerical checks
+  check_nan: true
+  check_inf: true
+  check_condition_number: true
+
+  # Warnings
+  warn_on_poor_conditioning: true
+  warn_on_slow_convergence: true
+  warn_on_high_memory: true

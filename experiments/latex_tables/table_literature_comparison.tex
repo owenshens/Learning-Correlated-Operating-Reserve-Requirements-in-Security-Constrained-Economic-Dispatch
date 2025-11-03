@@ -1,0 +1,73 @@
+% Table: Literature Comparison
+% Description: Comparison of uncertainty modeling choices across robust UC literature
+% Usage: Include in paper Section 2 (Related Work) or Section 4 (Experimental Setup)
+
+\begin{table}[t]
+\centering
+\caption{Comparison of Uncertainty Modeling in Robust Unit Commitment Literature}
+\label{tab:literature_comparison}
+\small  % Use smaller font to fit more content
+\begin{tabular}{lp{2.5cm}ccp{3.5cm}}
+\toprule
+\textbf{Reference} & \textbf{Application} & \textbf{Obj.\ Unc.} & \textbf{Cons.\ Unc.} & \textbf{Uncertainty Set} \\
+\midrule
+Bertsimas \& Litvinov~\cite{BertsimasLitvinov2012}
+  & Security-constrained UC & -- & Budget $\Gamma = 0.1$--$0.3N$ & Polyhedral (budgeted) \\
+\midrule
+Zhao \& Guan~\cite{ZhaoGuan2013}
+  & Robust UC with DR & -- & $\pm 5$--$15\%$ demand & Hybrid poly-ellipsoidal \\
+\midrule
+Luh et al.~\cite{Luh2015}
+  & Wind dispatch & $15$--$25\%$ renewable & -- & $\mathbb{L}_2$ ball \\
+\midrule
+Papavasiliou \& Oren~\cite{PapavasiliouOren2013}
+  & Multi-area UC & -- & $10$--$20\%$ load & Scenario-based \\
+\midrule
+Jiang et al.~\cite{JiangUC2012}
+  & Adaptive robust UC & -- & $\pm 0.1$ p.u.\ load & Polyhedral box \\
+\midrule
+\textbf{This work}
+  & \textbf{DRPG validation} & \textbf{$\pm 15\%$ price} & \textbf{$\pm 10\%$ demand} & \textbf{$\mathbb{L}_2$/$\mathbb{L}_1$/$\mathbb{L}_\infty$} \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\parbox{\textwidth}{\footnotesize
+\textbf{Note:} ``Obj.\ Unc.'' = Objective uncertainty; ``Cons.\ Unc.'' = Constraint uncertainty;
+``DR'' = Demand response; ``p.u.'' = per unit. Our work extends prior literature by incorporating
+double uncertainty (both objective and constraint) and testing multiple uncertainty set geometries.
+}
+\end{table}
+
+% Notes for paper authors:
+% - Requires \usepackage{booktabs} for professional table rules
+% - Uses \small to fit more content (can use \footnotesize if needed)
+% - Citations should be defined in paper's bibliography
+% - The table highlights that most prior work focuses on constraint uncertainty only
+% - Our contribution: double uncertainty + envelope theorem exploitation
+% - Adjust column widths as needed for your journal/conference format
+%
+% Suggested bibliography entries:
+%   \bibitem{BertsimasLitvinov2012}
+%     D. Bertsimas and E. Litvinov,
+%     ``Adaptive robust optimization for the security constrained unit commitment problem,''
+%     \textit{IEEE Trans. Power Syst.}, vol. 28, no. 1, pp. 52--63, Feb. 2013.
+%
+%   \bibitem{ZhaoGuan2013}
+%     L. Zhao and Y. Zeng,
+%     ``Robust unit commitment problem with demand response and wind energy,''
+%     \textit{IEEE PES General Meeting}, 2012.
+%
+%   \bibitem{Luh2015}
+%     P. B. Luh et al.,
+%     ``Grid integration of intermittent wind generation: A Markovian approach,''
+%     \textit{IEEE Trans. Smart Grid}, vol. 6, no. 2, pp. 606--615, Mar. 2015.
+%
+%   \bibitem{PapavasiliouOren2013}
+%     A. Papavasiliou and S. S. Oren,
+%     ``Multiarea stochastic unit commitment for high wind penetration in a transmission constrained network,''
+%     \textit{Oper. Res.}, vol. 61, no. 3, pp. 578--592, 2013.
+%
+%   \bibitem{JiangUC2012}
+%     R. Jiang et al.,
+%     ``Robust unit commitment with wind power and pumped storage hydro,''
+%     \textit{IEEE Trans. Power Syst.}, vol. 27, no. 2, pp. 800--810, May 2012.

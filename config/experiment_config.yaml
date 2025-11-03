@@ -1,0 +1,189 @@
+# Experiment Configuration
+# ========================
+# Default parameters for all experiments
+
+# General settings
+random_seed: 42
+n_runs: 10  # Number of independent runs for statistical significance
+confidence_level: 0.95
+
+# Problem generation
+problem_generation:
+  # Small problems (quick tests)
+  small:
+    n_agents: 5
+    avg_vars_per_agent: 10
+    n_resources: 3
+    n_factors_p: 2
+    n_factors_c: 2
+    uncertainty_radius_p: 2.0
+    uncertainty_radius_c: 1.0
+
+  # Medium problems (validation)
+  medium:
+    n_agents: 20
+    avg_vars_per_agent: 20
+    n_resources: 10
+    n_factors_p: 5
+    n_factors_c: 5
+    uncertainty_radius_p: 5.0
+    uncertainty_radius_c: 2.0
+
+  # Large problems (scalability)
+  large:
+    n_agents: 100
+    avg_vars_per_agent: 30
+    n_resources: 20
+    n_factors_p: 10
+    n_factors_c: 10
+    uncertainty_radius_p: 10.0
+    uncertainty_radius_c: 5.0
+
+# Uncertainty set types
+uncertainty_sets:
+  - type: L2Ball
+    name: "L2 Ball"
+  - type: L1Ball
+    name: "L1 Ball"
+  - type: LinfBox
+    name: "L∞ Box"
+  - type: TVBudgetSet
+    name: "TV Budget"
+    params:
+      Gamma: 10.0
+  - type: TopKSet
+    name: "Top-K"
+    params:
+      K: 3
+      Gamma: 10.0
+  - type: EllipsoidSet
+    name: "Ellipsoid"
+
+# Solver settings
+solvers:
+  # DirectNominalSolver (CVXOPT-based)
+  nominal:
+    name: "Direct QP"
+    tolerance: 1.0e-6
+
+  # DRPG (stress search)
+  drpg:
+    name: "DRPG"
+    outer_tolerance: 1.0e-4
+    inner_tolerance: 1.0e-3
+    max_outer_iterations: 200
+    initial_stepsize: 1.0
+    stepsize_decay: 0.5
+    verbose: false
+
+  # PRDA (protective clearing)
+  prda:
+    name: "PRDA"
+    tolerance: 1.0e-4
+    max_iterations: 1000
+    initial_stepsize: 0.1
+    stepsize_schedule: "diminishing"
+    smooth_penalty: false
+    verbose: false
+
+# Experiment-specific settings
+experiments:
+  # Category I: Theoretical validation
+  category_I:
+    envelope_verification:
+      epsilon_gradient: 1.0e-5  # Finite difference step
+      tolerance: 1.0e-4  # Error tolerance
+      n_samples: 50  # Number of random u samples
+
+    dual_equivalence:
+      tolerance: 1.0e-3  # Duality gap tolerance
+      n_tests: 20
+
+  # Category II: Convergence rates
+  category_II:
+    drpg_convergence:
+      max_iterations: 500
+      tolerance: 1.0e-6
+      n_problem_sizes: 5
+
+    prda_convergence:
+      max_iterations: 1000
+      tolerance: 1.0e-6
+      n_problem_sizes: 5
+
+  # Category III: Scalability
+  category_III:
+    problem_scaling:
+      n_agents_range: [10, 20, 50, 100, 200, 500, 1000]
+      timeout_seconds: 3600  # 1 hour max per problem
+      memory_limit_gb: 16
+
+    benchmark_comparison:
+      methods: ["DRPG", "PRDA", "CVXPY-Monolithic", "CCG", "AARO"]
+      n_agents_range: [10, 20, 50, 100, 200]
+      max_time_per_method: 600  # 10 minutes
+
+  # Category IV: Case studies
+  category_IV:
+    ieee_systems:
+      bus_systems: [14, 30, 118]
+      time_horizon: 24  # hours
+      uncertainty_budget: 0.2  # 20% renewable variation
+
+    regional_grids:
+      regions: ["CA", "TX", "NE"]
+      stress_scenarios: ["heat_wave", "cold_snap", "low_wind"]
+
+    rolling_horizon:
+      horizon_length: 24
+      n_days: 7
+      receding_interval: 1
+
+  # Category V: Economic insights
+  category_V:
+    pareto_frontier:
+      n_points: 50
+      rho_range: [0.0, 20.0]
+
+    price_volatility:
+      n_scenarios: 100
+      uncertainty_levels: [0.0, 0.05, 0.10, 0.15, 0.20]
+
+  # Category VI: Uncertainty set comparison
+  category_VI:
+    set_comparison:
+      budget_levels: [1.0, 2.0, 5.0, 10.0]
+      n_samples: 100
+
+    calibration:
+      historical_data_size: 1000
+      validation_split: 0.2
+
+  # Category VII: Sensitivity analysis
+  category_VII:
+    parameter_sensitivity:
+      parameters: ["rho_p", "rho_c", "Q_scale", "P_scale"]
+      variation_range: [-0.5, 0.5]  # ±50%
+      n_levels: 11
+
+# Visualization settings
+visualization:
+  style: "seaborn-v0_8-darkgrid"
+  figure_format: "pdf"
+  dpi: 300
+  font_size: 12
+  figure_size: [8, 6]
+  color_palette: "Set2"
+
+# Output settings
+output:
+  save_formats: ["json", "hdf5"]
+  compress_arrays: true
+  save_trajectories: true
+  save_intermediate: false
+
+# Computational settings
+computational:
+  use_multiprocessing: true
+  n_workers: 4  # Number of parallel workers
+  chunk_size: 10  # Problems per batch

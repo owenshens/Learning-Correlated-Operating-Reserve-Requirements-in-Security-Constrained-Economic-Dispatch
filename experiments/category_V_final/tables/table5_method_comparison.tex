@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Complete method comparison across all experimental problems}
+\label{tab:method_comparison}
+\begin{tabular}{l c c c c c c}
+\toprule
+Method & Solve Time (s) & Success (\%) & Mean Revenue (\$) & PoR (\%) & Var. Red. (\%) & Speedup \\
+\midrule
+Nominal & 13.60ms & 100.0\% & 348589.10 & $0.00e+00\%$ & $0.00e+00\%$ & 28.01$\times$ \\
+Scenario-Based RO & 380.84ms & 100.0\% & 348562.72 & $-4.95e-05\%$ & 0.14\% & 1.00$\times$ \\
+DRPG & 81.79ms & 96.3\% & 348551.13 & $2.24e-04\%$ & 0.21\% & 4.66$\times$ \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\footnotesize
+\textbf{Notes:} Averaged over 81 problem instances.
+Solve time includes worst-case search.
+Success rate = \% of problems solved to optimality.
+PoR = Price of Robustness (expected cost increase).
+Var. Red. = Variance reduction (risk mitigation).
+Speedup relative to Scenario-Based RO.
+\end{table}

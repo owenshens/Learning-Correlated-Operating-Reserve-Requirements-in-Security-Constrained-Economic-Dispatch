@@ -1,0 +1,24 @@
+{
+  "experiment_name": "I.3_stress_diagnostic",
+  "start_time": "2025-10-20T13:22:11.487541",
+  "end_time": "2025-10-20T13:24:12.087618",
+  "duration_seconds": 120.60007381439209,
+  "parameters": {
+    "problem_sizes": [
+      [
+        5,
+        10,
+        3
+      ],
+      [
+        10,
+        15,
+        5
+      ]
+    ],
+    "n_problems": 5,
+    "n_random_directions": 10
+  },
+  "results": {},
+  "runs": []
+}

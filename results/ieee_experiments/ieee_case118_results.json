@@ -1,0 +1,48 @@
+{
+  "problem_info": {
+    "case": "case118",
+    "n_agents": 53,
+    "n_vars": 53,
+    "n_resources": 1,
+    "n_factors_p": 3,
+    "n_factors_c": 2,
+    "uncertainty_radius_p": 0.15,
+    "uncertainty_radius_c": 0.1
+  },
+  "results": {
+    "nominal": {
+      "converged": true,
+      "objective": -67060.11644088884,
+      "solve_time": 0.016896963119506836,
+      "iterations": 1
+    },
+    "scenario": {
+      "converged": true,
+      "objective": -68716.66900580653,
+      "solve_time": 0.24724411964416504,
+      "iterations": 20
+    },
+    "drpg": {
+      "converged": true,
+      "objective": -68872.87255173472,
+      "solve_time": 0.048195838928222656,
+      "iterations": 3,
+      "total_inner_iterations": 3,
+      "convergence_history": {
+        "outer_iterations": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "worst_case_values": [
+          66332.03252682794,
+          68872.86800658086,
+          68872.87255173472
+        ],
+        "gradient_norms": []
+      }
+    },
+    "price_of_robustness": 2.7031806788521715
+  }
+}

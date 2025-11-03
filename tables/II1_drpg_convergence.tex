@@ -1,0 +1,14 @@
+\begin{table}[h]
+\centering
+\caption{DRPG Convergence Rate Analysis}
+\begin{tabular}{lcccccc}
+\hline
+Problem & Uset & Runs & Mean $\alpha$ & Std $\alpha$ & Mean $R^2$ & Pass \\
+\hline
+$N=5$ & L2Ball & 4 & 13.136 & 1.573 & 0.980 & \times \\
+$N=5$ & L1Ball & 2 & 6.258 & 2.351 & 0.785 & \times \\
+$N=10$ & L2Ball & 2 & 10.473 & 0.118 & 0.961 & \times \\
+\hline
+\multicolumn{7}{l}{Target: $\alpha \approx 0.5$ (O(1/$\sqrt{K}$) convergence)} \\
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+\begin{table}[h]
+\centering
+\caption{DRPG Scalability Analysis}
+\begin{tabular}{cccccc}
+\hline
+$N$ & Vars & $m$ & Mean Time (s) & Iters & Time/Iter (ms) \\
+\hline
+5 & 49 & 3 & 0.35$\pm$0.20 & 9.3 & 37.3 \\
+10 & 150 & 5 & 2.86$\pm$2.56 & 18.3 & 155.9 \\
+20 & 297 & 8 & 7.20$\pm$1.07 & 47.0 & 153.2 \\
+50 & 990 & 10 & 29.90$\pm$0.00 & 16.0 & 1868.5 \\
+\hline
+\multicolumn{6}{l}{Scaling: $t \propto N^{1.86}$ ($R^2$=0.964)} \\
+\end{tabular}
+\end{table}

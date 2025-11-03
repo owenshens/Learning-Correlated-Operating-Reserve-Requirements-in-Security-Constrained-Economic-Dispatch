@@ -1,0 +1,8 @@
+{
+  "drpg_vs_scenario": {
+    "t_statistic": -13.408474857611196,
+    "p_value": 2.799821379887267e-26,
+    "drpg_mean_time": 0.08344476345257881,
+    "scenario_mean_time": 0.38084106975131565
+  }
+}
