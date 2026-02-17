@@ -1,0 +1,148 @@
+{
+  "d": 15,
+  "d_context": 7,
+  "n_sources": 3,
+  "n_regions": 5,
+  "sources": [
+    "load",
+    "solar",
+    "wind"
+  ],
+  "regions": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+  ],
+  "dim_labels": [
+    "load_R1",
+    "load_R2",
+    "load_R3",
+    "load_R4",
+    "load_R5",
+    "solar_R1",
+    "solar_R2",
+    "solar_R3",
+    "solar_R4",
+    "solar_R5",
+    "wind_R1",
+    "wind_R2",
+    "wind_R3",
+    "wind_R4",
+    "wind_R5"
+  ],
+  "context_labels": [
+    "load_fc",
+    "solar_fc",
+    "wind_fc",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "zone_to_region": {
+    "1": "R1",
+    "2": "R1",
+    "3": "R2",
+    "4": "R2",
+    "5": "R3",
+    "6": "R3",
+    "7": "R4",
+    "8": "R4",
+    "9": "R5",
+    "10": "R5"
+  },
+  "region_loads_mw": {
+    "R1": 706,
+    "R2": 755,
+    "R3": 1023,
+    "R4": 1028,
+    "R5": 730
+  },
+  "solar_zones": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "wind_zones": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "solar_regions": [
+    "R2",
+    "R3"
+  ],
+  "wind_regions": [
+    "R4",
+    "R5"
+  ],
+  "n_hours": 35040,
+  "n_years": 4,
+  "seed": 42,
+  "tau": 0.95,
+  "split_indices": {
+    "train": [
+      0,
+      21024
+    ],
+    "tune": [
+      21024,
+      28032
+    ],
+    "calibrate": [
+      28032,
+      31536
+    ],
+    "test": [
+      31536,
+      35040
+    ]
+  },
+  "marginal_sigmas_base_mw": [
+    18.362703986316475,
+    19.63716927715147,
+    26.60771413314696,
+    26.73776161180359,
+    18.98693188386831,
+    19.993160087579334,
+    21.38078734578243,
+    28.970258880444273,
+    29.111853498628264,
+    20.672814254862484,
+    70.77142256182864,
+    75.68332016172893,
+    102.54839274893868,
+    103.04960678974483,
+    73.17724995769818
+  ],
+  "ar1_coefficients": [
+    0.9218956305766842,
+    0.963186369671101,
+    0.9303647258544075,
+    0.959364173283764,
+    0.9568578959594342,
+    0.9184986843935806,
+    0.9596372778286494,
+    0.9269365732527857,
+    0.9558291652432075,
+    0.9533321229004832,
+    0.937117942261566,
+    0.9790904727424994,
+    0.9457268789744048,
+    0.9752051643685132,
+    0.9726575034717546
+  ],
+  "context_dependent_effects": {
+    "solar_variance": "sigma_solar * clip(solar_fc / solar_fc_p75, 0.01, 3.0)",
+    "wind_variance": "sigma_wind * clip(wind_fc / wind_fc_p50, 0.1, 4.0)^0.7",
+    "load_variance": "sigma_load * (0.6 + 0.4 * load_fc / load_fc_mean)",
+    "wind_nonwind_regions": "0.5 * clip(wind_fc_avg / wind_fc_mean, 0.3, 2.0)^0.3",
+    "solar_wind_corr_shift": "delta_R(solar,wind) = -0.40 * clip(solar_ctx, 0, 1)",
+    "wind_load_corr_shift": "delta_R(wind,load) = +0.25 * clip(wind_ctx, 0, 1)",
+    "load_solar_corr_shift": "delta_R(load,solar) = -0.20 * clip(load_ctx, 0, 1)"
+  }
+}

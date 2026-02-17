@@ -1,0 +1,901 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rigorous Mathematics for Bilevel Geometry Learning with Conformal Calibration
+% Option 2: Tuning-based approximation of the profiled (oracle) gradient
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\bw}{\bm{w}}
+\newcommand{\bx}{\bm{x}}
+\newcommand{\bmu}{\bm{\mu}}
+
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\ri}{ri}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Rigorous Mathematics for Robust Uncertainty-Set Geometry Learning\\
+with Conformal Calibration (Option 2: Tuning-Based Profiled Gradients)}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study robust optimization where the uncertainty distribution $P$ is unknown and the uncertainty set
+$\cU_{\btheta,\rho}=\{\bu: s_{\btheta}(\bu)\le \rho\}$ is parameterized by a shape $\btheta$ and a size $\rho$.
+The outer objective is to minimize the robust value $V(\btheta,\rho)$ subject to a coverage constraint
+$\Prob(\bu\in \cU_{\btheta,\rho})\ge \tau$.
+We present a rigorous, two-case mathematical development:
+(i) when $P$ is known, the bilevel problem reduces to a profiled objective $J_P(\btheta)=V(\btheta,\rho_P(\btheta))$ and we derive the \emph{true} gradient of $J_P$,
+including the quantile-sensitivity correction term that depends on $P$; (ii) when $P$ is unknown, we use split conformal calibration on an independent calibration set to obtain distribution-free marginal coverage.
+We then formalize Option 2: use an additional \emph{tuning split} to construct a smooth, differentiable approximation of the profiled gradient (including the quantile-sensitivity term) and prove consistency of this approximate gradient under standard regularity conditions, while preserving final conformal validity via an independent calibration split.
+\end{abstract}
+
+\section{Setup}
+
+\subsection{Parameterized uncertainty sets and gauge scores}
+
+Fix an uncertainty dimension $d\ge 1$ and a parameter set $\Theta\subseteq \R^p$ (shape space).
+We consider uncertainty sets of the form
+\begin{equation}\label{eq:uset}
+\cU_{\btheta,\rho} \;:=\; \{\bu\in \R^d:\; s_{\btheta}(\bu)\le \rho\},
+\qquad \btheta\in\Theta,\;\rho>0,
+\end{equation}
+where $s_{\btheta}:\R^d\to [0,\infty)$ is the gauge (Minkowski functional) of the \emph{unit} set $\cU_{\btheta,1}$.
+
+\begin{assumption}[Gauge regularity and scaling]\label{asm:gauge}
+For each $\btheta\in\Theta$, the unit set $\cU_{\btheta,1}$ is nonempty, convex, compact, contains $\bm{0}$ in its interior, and
+$s_{\btheta}$ is the gauge of $\cU_{\btheta,1}$:
+\[
+s_{\btheta}(\bu) \;=\; \inf\{t>0:\; \bu\in t\,\cU_{\btheta,1}\}.
+\]
+Consequently, $\cU_{\btheta,\rho}=\rho\,\cU_{\btheta,1}$ for all $\rho>0$.
+\end{assumption}
+
+\begin{definition}[Support function]
+For a nonempty set $C\subseteq \R^d$, its support function is
+\[
+\sigma_C(\bw) \;:=\; \sup_{\bu\in C}\ip{\bw}{\bu} \in (-\infty,+\infty].
+\]
+\end{definition}
+
+A standard convex-analytic identity is the scaling of support functions.
+
+\begin{lemma}[Support function scaling]\label{lem:support-scaling}
+If $C\subseteq \R^d$ is nonempty and $\rho>0$, then
+\[
+\sigma_{\rho C}(\bw) = \rho\,\sigma_C(\bw)\qquad \forall \bw\in \R^d.
+\]
+\end{lemma}
+
+\begin{proof}
+By definition,
+\[
+\sigma_{\rho C}(\bw)
+=\sup_{\bu\in \rho C}\ip{\bw}{\bu}
+=\sup_{\bv\in C}\ip{\bw}{\rho \bv}
+=\rho \sup_{\bv\in C}\ip{\bw}{\bv}
+=\rho\,\sigma_C(\bw).
+\]
+\end{proof}
+
+Under Assumption~\ref{asm:gauge}, Lemma~\ref{lem:support-scaling} yields
+\begin{equation}\label{eq:sigma-scale}
+\sigma_{\cU_{\btheta,\rho}}(\bw) = \rho\,\sigma_{\cU_{\btheta,1}}(\bw).
+\end{equation}
+
+\subsection{Robust optimization layer and value function}
+
+Let $\cX\subseteq \R^{n_x}$ be a closed convex decision set, $f:\R^{n_x}\to \R\cup\{+\infty\}$ be a proper closed convex objective,
+and $a_j:\R^{n_x}\to \R\cup\{+\infty\}$ be proper closed convex functions.
+Fix exposure vectors $\bw_1,\dots,\bw_m\in \R^d$ and scalars $b_1,\dots,b_m\in \R$.
+
+Given $(\btheta,\rho)$, define the robust optimization problem
+\begin{equation}\label{eq:robust}
+\begin{aligned}
+V(\btheta,\rho)
+\;:=\;
+\inf_{\bx\in \cX}\quad & f(\bx)\\
+\text{s.t.}\quad &
+a_j(\bx)+\sigma_{\cU_{\btheta,\rho}}(\bw_j)\le b_j,\qquad j=1,\dots,m.
+\end{aligned}
+\end{equation}
+
+\begin{assumption}[Convexity and Slater]\label{asm:slater}
+For each $(\btheta,\rho)$:
+(i) $\cX$ is nonempty, closed, convex; (ii) $f$ and all $a_j$ are proper closed convex; and
+(iii) there exists $\bar{\bx}\in \ri(\cX)$ such that
+$a_j(\bar{\bx})+\sigma_{\cU_{\btheta,\rho}}(\bw_j) < b_j$ for all $j$ (Slater condition).
+\end{assumption}
+
+Assumption~\ref{asm:slater} ensures strong duality and existence of optimal dual multipliers for~\eqref{eq:robust}.
+
+\subsection{Outer problem and score quantiles}
+
+Let $U\sim P$ be a random uncertainty realization in $\R^d$.
+Define the gauge score random variable
+\[
+S_{\btheta} := s_{\btheta}(U).
+\]
+Define its CDF (under $P$)
+\[
+F_{\btheta}(r) := \Prob(S_{\btheta}\le r),\qquad r\in \R.
+\]
+Fix a target coverage level $\tau\in(0,1)$.
+
+The learning problem is:
+\begin{equation}\label{eq:bilevel}
+\boxed{
+\min_{\btheta\in \Theta,\;\rho>0} V(\btheta,\rho)
+\quad\text{s.t.}\quad
+\Prob(U\in \cU_{\btheta,\rho})\ge \tau.
+}
+\end{equation}
+Since $U\in \cU_{\btheta,\rho}$ iff $s_{\btheta}(U)\le \rho$, the coverage constraint is
+\begin{equation}\label{eq:coverage}
+\Prob(U\in \cU_{\btheta,\rho})\ge \tau
+\quad\Longleftrightarrow\quad
+F_{\btheta}(\rho)\ge \tau.
+\end{equation}
+
+We define the (left) $\tau$-quantile radius map:
+\begin{equation}\label{eq:rhoP}
+\rho_P(\btheta)\;:=\;\inf\{r>0:\;F_{\btheta}(r)\ge \tau\}\in (0,+\infty].
+\end{equation}
+
+\section{Case I: $P$ known (oracle profiling and the true gradient)}
+
+\subsection{Profiling out the radius}
+
+\begin{assumption}[Monotonicity in radius]\label{asm:monotone}
+For each $\btheta\in\Theta$ and $0<\rho_1\le \rho_2$, $\cU_{\btheta,\rho_1}\subseteq \cU_{\btheta,\rho_2}$.
+\end{assumption}
+
+Assumption~\ref{asm:monotone} holds under Assumption~\ref{asm:gauge} by construction.
+
+\begin{proposition}[Radius profiling]\label{prop:profiling}
+Assume Assumptions~\ref{asm:gauge} and~\ref{asm:slater}. Fix $\btheta\in\Theta$ and suppose $\rho_P(\btheta)<\infty$.
+Then:
+\begin{enumerate}[label=(\roman*), leftmargin=2em, itemsep=1pt]
+\item The map $\rho\mapsto V(\btheta,\rho)$ is nondecreasing on $(0,\infty)$.
+\item The smallest feasible radius for the coverage constraint is $\rho=\rho_P(\btheta)$.
+\item The bilevel problem~\eqref{eq:bilevel} is equivalent to the single-level \emph{profiled} problem
+\begin{equation}\label{eq:profiled}
+\min_{\btheta\in\Theta}\; J_P(\btheta)
+\qquad\text{where}\qquad
+J_P(\btheta):=V\big(\btheta,\rho_P(\btheta)\big).
+\end{equation}
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Fix $\btheta$ and let $0<\rho_1\le \rho_2$. By Assumption~\ref{asm:monotone},
+$\cU_{\btheta,\rho_1}\subseteq \cU_{\btheta,\rho_2}$, hence for each $j$,
+\[
+\sigma_{\cU_{\btheta,\rho_1}}(\bw_j)
+=\sup_{\bu\in \cU_{\btheta,\rho_1}}\ip{\bw_j}{\bu}
+\le
+\sup_{\bu\in \cU_{\btheta,\rho_2}}\ip{\bw_j}{\bu}
+=
+\sigma_{\cU_{\btheta,\rho_2}}(\bw_j).
+\]
+Therefore, every feasible $\bx$ for radius $\rho_2$ is also feasible for radius $\rho_1$ (the constraints at $\rho_1$ are weaker),
+so the feasible region of~\eqref{eq:robust} expands as $\rho$ decreases. Thus the optimal value is nondecreasing in $\rho$:
+$V(\btheta,\rho_1)\le V(\btheta,\rho_2)$.
+
+(ii) By~\eqref{eq:coverage} and~\eqref{eq:rhoP}, the coverage constraint $F_{\btheta}(\rho)\ge \tau$ holds iff $\rho\ge \rho_P(\btheta)$.
+Hence the smallest feasible radius is $\rho_P(\btheta)$.
+
+(iii) Fix any feasible $(\btheta,\rho)$ for~\eqref{eq:bilevel}. By (ii), $\rho\ge \rho_P(\btheta)$.
+By (i), $V(\btheta,\rho)\ge V(\btheta,\rho_P(\btheta))=J_P(\btheta)$.
+Thus, for each $\btheta$, the best feasible choice is $\rho=\rho_P(\btheta)$, and the bilevel reduces to~\eqref{eq:profiled}.
+\end{proof}
+
+\subsection{Envelope derivatives of $V(\btheta,\rho)$}
+
+We now derive derivatives of the robust value function with respect to $(\btheta,\rho)$ without differentiating through the optimizer.
+
+Define $\sigma_j(\btheta,\rho):=\sigma_{\cU_{\btheta,\rho}}(\bw_j)$.
+
+\begin{assumption}[Differentiability of support functions]\label{asm:sigma-diff}
+Fix $\rho>0$. For each $j\in\{1,\dots,m\}$, the map $\btheta\mapsto \sigma_j(\btheta,\rho)$ is differentiable on $\Theta$.
+\end{assumption}
+
+\begin{theorem}[Envelope gradient for shape]\label{thm:envelope-theta}
+Assume Assumptions~\ref{asm:slater} and~\ref{asm:sigma-diff}. Fix $(\btheta,\rho)$.
+Let $\bmu^*(\btheta,\rho)\in \R_+^m$ be any optimal dual multiplier vector for~\eqref{eq:robust}.
+Then
+\begin{equation}\label{eq:env-theta}
+\bg_{\btheta}(\btheta,\rho)
+:=\sum_{j=1}^m \mu_j^*(\btheta,\rho)\,\nabla_{\btheta}\sigma_{\cU_{\btheta,\rho}}(\bw_j)
+\end{equation}
+is a subgradient of $\btheta\mapsto V(\btheta,\rho)$ at $\btheta$.
+If, additionally, the optimal dual multiplier is unique at $(\btheta,\rho)$, then $V(\cdot,\rho)$ is differentiable at $\btheta$ and
+\[
+\nabla_{\btheta}V(\btheta,\rho)=\bg_{\btheta}(\btheta,\rho).
+\]
+\end{theorem}
+
+\begin{proof}
+We write the Lagrangian of~\eqref{eq:robust}. Introduce the indicator $I_{\cX}(\bx)$ which is $0$ if $\bx\in\cX$ and $+\infty$ otherwise.
+Define constraint functions
+\[
+g_j(\bx;\btheta,\rho) := a_j(\bx) + \sigma_j(\btheta,\rho) - b_j.
+\]
+Then~\eqref{eq:robust} is $\inf_{\bx} f(\bx)+I_{\cX}(\bx)$ subject to $g_j(\bx;\btheta,\rho)\le 0$.
+
+For multipliers $\bmu\in \R_+^m$, the Lagrangian is
+\[
+\cL(\bx,\bmu;\btheta,\rho)
+=
+f(\bx)+I_{\cX}(\bx)+\sum_{j=1}^m \mu_j\big(a_j(\bx)+\sigma_j(\btheta,\rho)-b_j\big).
+\]
+Define the dual function
+\[
+q(\bmu;\btheta,\rho) := \inf_{\bx\in \R^{n_x}} \cL(\bx,\bmu;\btheta,\rho).
+\]
+Because $\sigma_j(\btheta,\rho)$ does not depend on $\bx$, we can separate:
+\[
+q(\bmu;\btheta,\rho)
+=
+\underbrace{\inf_{\bx}\left(f(\bx)+I_{\cX}(\bx)+\sum_{j=1}^m \mu_j a_j(\bx)\right)}_{=: \tilde q(\bmu)\ \text{(independent of $\btheta,\rho$)}}
+\;+\;
+\sum_{j=1}^m \mu_j\big(\sigma_j(\btheta,\rho)-b_j\big).
+\]
+Hence, for fixed $(\rho,\bmu)$, $q(\bmu;\cdot,\rho)$ is differentiable with
+\[
+\nabla_{\btheta} q(\bmu;\btheta,\rho) = \sum_{j=1}^m \mu_j\,\nabla_{\btheta}\sigma_j(\btheta,\rho).
+\]
+
+By Assumption~\ref{asm:slater}, strong duality holds and the dual optimum is attained:
+\[
+V(\btheta,\rho) = \max_{\bmu\ge 0} q(\bmu;\btheta,\rho),
+\qquad
+\bmu^*(\btheta,\rho)\in \argmax_{\bmu\ge 0} q(\bmu;\btheta,\rho).
+\]
+We now prove that $\bg_{\btheta}(\btheta,\rho)$ in~\eqref{eq:env-theta} is a subgradient.
+Fix $\btheta'$ and let $\bmu^*=\bmu^*(\btheta,\rho)$ be an optimal multiplier at $(\btheta,\rho)$.
+Then
+\[
+V(\btheta',\rho) = \max_{\bmu\ge 0} q(\bmu;\btheta',\rho) \;\ge\; q(\bmu^*;\btheta',\rho).
+\]
+By differentiability of $q(\bmu^*;\cdot,\rho)$ at $\btheta$,
+\[
+q(\bmu^*;\btheta',\rho)
+=
+q(\bmu^*;\btheta,\rho)
++
+\ip{\nabla_{\btheta}q(\bmu^*;\btheta,\rho)}{\btheta'-\btheta}
++o(\norm{\btheta'-\btheta}).
+\]
+Using $q(\bmu^*;\btheta,\rho)=V(\btheta,\rho)$ (optimality),
+\[
+V(\btheta',\rho)\ge V(\btheta,\rho) + \ip{\nabla_{\btheta}q(\bmu^*;\btheta,\rho)}{\btheta'-\btheta} + o(\norm{\btheta'-\btheta}).
+\]
+Thus $\nabla_{\btheta}q(\bmu^*;\btheta,\rho)$ is a subgradient of $V(\cdot,\rho)$ at $\btheta$.
+Finally,
+\[
+\nabla_{\btheta}q(\bmu^*;\btheta,\rho)=\sum_{j=1}^m \mu_j^*(\btheta,\rho)\,\nabla_{\btheta}\sigma_j(\btheta,\rho)=\bg_{\btheta}(\btheta,\rho).
+\]
+If the dual maximizer is unique, standard Danskin/envelope arguments imply differentiability of $V(\cdot,\rho)$ at $\btheta$ and the subgradient is the gradient.
+\end{proof}
+
+Next, we obtain an envelope derivative with respect to $\rho$.
+
+\begin{theorem}[Envelope derivative for size]\label{thm:envelope-rho}
+Assume Assumptions~\ref{asm:gauge} and~\ref{asm:slater}. Fix $(\btheta,\rho)$.
+Let $\bmu^*(\btheta,\rho)$ be any optimal dual multipliers for~\eqref{eq:robust}.
+Then
+\begin{equation}\label{eq:env-rho}
+g_{\rho}(\btheta,\rho)
+:=
+\sum_{j=1}^m \mu_j^*(\btheta,\rho)\,\sigma_{\cU_{\btheta,1}}(\bw_j)
+\end{equation}
+is a subgradient of $\rho\mapsto V(\btheta,\rho)$ at $\rho$.
+If the optimal dual multiplier is unique at $(\btheta,\rho)$, then $V(\btheta,\cdot)$ is differentiable at $\rho$ and
+\[
+\frac{\partial}{\partial\rho}V(\btheta,\rho)=g_\rho(\btheta,\rho).
+\]
+\end{theorem}
+
+\begin{proof}
+From the dual representation in the proof of Theorem~\ref{thm:envelope-theta},
+\[
+V(\btheta,\rho)=\max_{\bmu\ge 0}\Big(\tilde q(\bmu)+\sum_{j=1}^m \mu_j(\sigma_j(\btheta,\rho)-b_j)\Big).
+\]
+By Lemma~\ref{lem:support-scaling} and Assumption~\ref{asm:gauge},
+$\sigma_j(\btheta,\rho)=\rho\,\sigma_{\cU_{\btheta,1}}(\bw_j)$, hence for fixed $(\btheta,\bmu)$ the dual function is affine in $\rho$:
+\[
+q(\bmu;\btheta,\rho)=
+\tilde q(\bmu)-\sum_{j=1}^m \mu_j b_j
++\rho \sum_{j=1}^m \mu_j \sigma_{\cU_{\btheta,1}}(\bw_j).
+\]
+Therefore, for each fixed $(\btheta,\bmu)$, $\frac{\partial}{\partial\rho}q(\bmu;\btheta,\rho)=\sum_j \mu_j \sigma_{\cU_{\btheta,1}}(\bw_j)$.
+Now repeat the same subgradient argument as in Theorem~\ref{thm:envelope-theta}, treating $\rho$ as the parameter and using any optimal maximizer $\bmu^*(\btheta,\rho)$.
+This gives~\eqref{eq:env-rho}. Uniqueness of $\bmu^*$ yields differentiability and equality.
+\end{proof}
+
+\subsection{The true gradient of the oracle profiled objective}
+
+By Proposition~\ref{prop:profiling}, the oracle profiled objective is
+\[
+J_P(\btheta)=V\big(\btheta,\rho_P(\btheta)\big).
+\]
+The \emph{true} gradient of $J_P$ includes both the direct effect of $\btheta$ on $V$ and the indirect effect through $\rho_P(\btheta)$.
+
+To state a differentiability result for $\rho_P(\btheta)$, we impose a standard regularity condition at the quantile.
+
+\begin{assumption}[Quantile regularity]\label{asm:quantile-reg}
+Fix $\btheta\in\Theta$ and let $\rho_P(\btheta)$ be defined as in~\eqref{eq:rhoP}.
+There exists an open interval $I$ containing $\rho_P(\btheta)$ such that:
+(i) $F_{\btheta}$ is continuously differentiable on $I$ with density $f_{\btheta}(r):=\partial_r F_{\btheta}(r)$;
+(ii) $f_{\btheta}(\rho_P(\btheta))>0$; and
+(iii) for $\btheta'$ in a neighborhood of $\btheta$, the map $(\btheta',r)\mapsto F_{\btheta'}(r)$ is continuously differentiable on $\{\btheta'\}\times I$.
+\end{assumption}
+
+\begin{lemma}[Implicit derivative of the quantile map]\label{lem:quantile-derivative}
+Assume Assumption~\ref{asm:quantile-reg} holds at $\btheta$.
+Then there exists a neighborhood $N$ of $\btheta$ and a continuously differentiable map $\rho_P:N\to \R$ such that
+$F_{\btheta'}(\rho_P(\btheta'))=\tau$ for all $\btheta'\in N$.
+Moreover,
+\begin{equation}\label{eq:quantile-ift}
+\nabla_{\btheta}\rho_P(\btheta)
+=
+-\frac{\nabla_{\btheta}F_{\btheta}(\rho_P(\btheta))}{f_{\btheta}(\rho_P(\btheta))}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Define $G(\btheta,r):=F_{\btheta}(r)-\tau$.
+By definition of $\rho_P(\btheta)$ under Assumption~\ref{asm:quantile-reg}, $G(\btheta,\rho_P(\btheta))=0$.
+Also, $\partial_r G(\btheta,\rho_P(\btheta))=f_{\btheta}(\rho_P(\btheta))>0$ by Assumption~\ref{asm:quantile-reg}(ii).
+By the implicit function theorem, there exists a neighborhood $N$ of $\btheta$ and a unique continuously differentiable function $\rho_P$ on $N$
+such that $G(\btheta',\rho_P(\btheta'))=0$ for all $\btheta'\in N$, i.e., $F_{\btheta'}(\rho_P(\btheta'))=\tau$.
+Differentiating $G(\btheta,\rho_P(\btheta))=0$ with respect to $\btheta$ yields
+\[
+\nabla_{\btheta}G(\btheta,\rho_P(\btheta)) + \partial_r G(\btheta,\rho_P(\btheta)) \,\nabla_{\btheta}\rho_P(\btheta)=0,
+\]
+which is exactly~\eqref{eq:quantile-ift}.
+\end{proof}
+
+\begin{theorem}[True oracle gradient of the profiled objective]\label{thm:true-oracle-grad}
+Assume:
+(i) Assumptions~\ref{asm:gauge},~\ref{asm:slater}, and~\ref{asm:sigma-diff} hold;
+(ii) Assumption~\ref{asm:quantile-reg} holds at $\btheta$; and
+(iii) $V(\cdot,\rho)$ is differentiable at $\btheta$ for $\rho=\rho_P(\btheta)$ and $V(\btheta,\cdot)$ is differentiable at $\rho_P(\btheta)$.
+Then $J_P$ is differentiable at $\btheta$ and
+\begin{equation}\label{eq:true-grad}
+\boxed{
+\nabla_{\btheta}J_P(\btheta)
+=
+\nabla_{\btheta}V\big(\btheta,\rho_P(\btheta)\big)
++
+\frac{\partial}{\partial\rho}V\big(\btheta,\rho_P(\btheta)\big)\,\nabla_{\btheta}\rho_P(\btheta).
+}
+\end{equation}
+Moreover, letting $\bmu^*=\bmu^*(\btheta,\rho_P(\btheta))$ be the (unique) optimal dual multipliers for~\eqref{eq:robust} at $(\btheta,\rho_P(\btheta))$,
+\begin{equation}\label{eq:true-grad-expanded}
+\boxed{
+\nabla_{\btheta}J_P(\btheta)
+=
+\sum_{j=1}^m \mu_j^*\,\nabla_{\btheta}\sigma_{\cU_{\btheta,\rho_P(\btheta)}}(\bw_j)
++
+\left(\sum_{j=1}^m \mu_j^*\,\sigma_{\cU_{\btheta,1}}(\bw_j)\right)
+\left(
+-\frac{\nabla_{\btheta}F_{\btheta}(\rho_P(\btheta))}{f_{\btheta}(\rho_P(\btheta))}
+\right).
+}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The chain rule gives~\eqref{eq:true-grad} because $J_P(\btheta)=V(\btheta,\rho_P(\btheta))$ and both factors are differentiable by assumption.
+The first term in~\eqref{eq:true-grad-expanded} follows from Theorem~\ref{thm:envelope-theta} (uniqueness gives equality).
+The scalar derivative $\partial_\rho V$ is given by Theorem~\ref{thm:envelope-rho}.
+Finally, $\nabla_{\btheta}\rho_P(\btheta)$ is given by Lemma~\ref{lem:quantile-derivative}.
+Substituting these identities into~\eqref{eq:true-grad} yields~\eqref{eq:true-grad-expanded}.
+\end{proof}
+
+\begin{remark}[Where $P$ enters the gradient]\label{rem:P-enters}
+The second term in~\eqref{eq:true-grad} is the \emph{quantile-sensitivity correction}.
+It depends on $P$ through $\nabla_{\btheta}F_{\btheta}(\rho_P(\btheta))$ and $f_{\btheta}(\rho_P(\btheta))$.
+If $P$ is unknown and no parametric model is assumed, this correction cannot be evaluated exactly; this is the fundamental reason that naive ``optimize $\btheta$ then calibrate $\rho$'' is not literally optimizing the oracle profiled objective $J_P$.
+Option 2 addresses this by approximating the correction on a tuning split.
+\end{remark}
+
+\section{Case II: $P$ unknown (distribution-free conformal calibration)}
+
+We now assume $P$ is unknown and only sample access is available.
+Let $\{U_i\}_{i=1}^{n_{\mathrm{cal}}}$ be a calibration sample (typically held out from training/tuning).
+We assume minimal symmetry:
+
+\begin{assumption}[Exchangeability for conformal]\label{asm:exchange}
+$(U_1,\dots,U_{n_{\mathrm{cal}}},U_{\mathrm{new}})$ are exchangeable.
+\end{assumption}
+
+\begin{theorem}[Split conformal marginal coverage]\label{thm:conformal}
+Assume Assumption~\ref{asm:exchange}. Fix any (possibly random) shape $\btheta$ that is independent of the calibration sample $(U_i)_{i=1}^{n_{\mathrm{cal}}}$.
+Define calibration scores $S_i=s_{\btheta}(U_i)$ for $i=1,\dots,n_{\mathrm{cal}}$ and let
+$S_{(1)}\le \dots\le S_{(n_{\mathrm{cal}})}$ be their order statistics.
+Set $S_{(n_{\mathrm{cal}}+1)}:=+\infty$ and define
+\begin{equation}\label{eq:conformal-rho}
+k:=\lceil (n_{\mathrm{cal}}+1)\tau\rceil,\qquad
+\hat\rho_{\tau}:=S_{(k)}.
+\end{equation}
+Then
+\[
+\Prob\big(s_{\btheta}(U_{\mathrm{new}})\le \hat\rho_\tau\big)\ge \tau,
+\qquad\text{equivalently}\qquad
+\Prob\big(U_{\mathrm{new}}\in \cU_{\btheta,\hat\rho_\tau}\big)\ge \tau.
+\]
+\end{theorem}
+
+\begin{proof}
+Consider the $(n_{\mathrm{cal}}+1)$ scores
+\[
+S_1,\dots,S_{n_{\mathrm{cal}}},S_{\mathrm{new}}
+\quad\text{where}\quad
+S_{\mathrm{new}}:=s_{\btheta}(U_{\mathrm{new}}).
+\]
+By Assumption~\ref{asm:exchange} and independence of $\btheta$ from the calibration sample,
+the joint distribution of these scores is exchangeable.
+Therefore, the rank of $S_{\mathrm{new}}$ among $\{S_1,\dots,S_{n_{\mathrm{cal}}},S_{\mathrm{new}}\}$ is uniform on $\{1,\dots,n_{\mathrm{cal}}+1\}$ (ties can be handled by the $+\infty$ augmentation).
+The event $S_{\mathrm{new}}\le S_{(k)}$ occurs whenever the rank of $S_{\mathrm{new}}$ is at most $k$, hence
+\[
+\Prob(S_{\mathrm{new}}\le S_{(k)})
+=
+\Prob(\mathrm{rank}(S_{\mathrm{new}})\le k)
+=
+\frac{k}{n_{\mathrm{cal}}+1}
+\ge \tau,
+\]
+since $k=\lceil (n_{\mathrm{cal}}+1)\tau\rceil$.
+\end{proof}
+
+\begin{remark}[Independence requirement]\label{rem:indep}
+Theorem~\ref{thm:conformal} only requires that the final calibrated radius $\hat\rho_\tau$ be computed on data independent of how $\btheta$ was obtained.
+In Option 2 below, $\btheta$ may depend on a separate training split and a separate tuning split; final calibration is performed on an independent calibration split, so the conformal guarantee remains valid.
+\end{remark}
+
+\section{Option 2: Tuning-based approximation of the profiled gradient}
+
+This section formalizes Option 2: approximate the oracle profiled gradient in Case I using an auxiliary tuning split, while preserving the final distribution-free coverage guarantee via an independent calibration split.
+
+\subsection{Data splits}
+
+Assume we have i.i.d.\ data $U_1,\dots,U_N\sim P$ (or exchangeable, where needed).
+We partition indices into three disjoint sets:
+\[
+\cD_{\mathrm{tr}}=\{U_i: i\in I_{\mathrm{tr}}\},\qquad
+\cD_{\mathrm{tune}}=\{U_i: i\in I_{\mathrm{tune}}\},\qquad
+\cD_{\mathrm{cal}}=\{U_i: i\in I_{\mathrm{cal}}\},
+\]
+with sizes $n_{\mathrm{tr}}, n_{\mathrm{tune}}, n_{\mathrm{cal}}$.
+
+\begin{itemize}[leftmargin=2em, itemsep=1pt]
+\item The \textbf{training} split $\cD_{\mathrm{tr}}$ is used to optimize (or approximate) gradients of the robust objective.
+\item The \textbf{tuning} split $\cD_{\mathrm{tune}}$ is used to approximate the \emph{quantile sensitivity} $\nabla_{\btheta}\rho_P(\btheta)$.
+\item The \textbf{calibration} split $\cD_{\mathrm{cal}}$ is used \emph{only} for conformal radius calibration, guaranteeing marginal coverage.
+\end{itemize}
+
+\subsection{A smooth quantile map that is differentiable in $\btheta$}
+
+The main technical obstacle in~\eqref{eq:true-grad-expanded} is that $\btheta\mapsto \rho_P(\btheta)$ is defined through a nonsmooth indicator CDF $F_{\btheta}(r)=\E[\mathbf{1}\{s_{\btheta}(U)\le r\}]$.
+We introduce a smooth approximation (standard in implicit differentiation for quantiles).
+
+\begin{assumption}[Smoothing function]\label{asm:smoothing}
+Let $\Phi:\R\to[0,1]$ be continuously differentiable, nondecreasing, and satisfy
+$\lim_{t\to-\infty}\Phi(t)=0$ and $\lim_{t\to+\infty}\Phi(t)=1$.
+Let $\varphi(t):=\Phi'(t)$ and assume $\varphi$ is bounded and not identically zero.
+\end{assumption}
+
+Fix a smoothing bandwidth $\varepsilon>0$.
+Define the smoothed CDF
+\begin{equation}\label{eq:smoothed-cdf}
+F_{\btheta,\varepsilon}(r)
+:=
+\E\left[\Phi\left(\frac{r-s_{\btheta}(U)}{\varepsilon}\right)\right].
+\end{equation}
+This is a continuous, differentiable function of $(\btheta,r)$ whenever $\btheta\mapsto s_{\btheta}(u)$ is differentiable.
+
+\begin{assumption}[Score differentiability and domination]\label{asm:score-diff}
+For each $u\in\R^d$, the map $\btheta\mapsto s_{\btheta}(u)$ is continuously differentiable.
+Moreover, there exists an integrable function $M(U)$ such that $\norm{\nabla_{\btheta}s_{\btheta}(U)}\le M(U)$ almost surely for all $\btheta$ in a neighborhood of interest.
+\end{assumption}
+
+\begin{lemma}[Derivatives of the smoothed CDF]\label{lem:smoothed-derivatives}
+Assume Assumptions~\ref{asm:smoothing} and~\ref{asm:score-diff}. Then for each $\varepsilon>0$:
+\begin{align}
+\partial_r F_{\btheta,\varepsilon}(r)
+&=
+\frac{1}{\varepsilon}\E\left[\varphi\left(\frac{r-s_{\btheta}(U)}{\varepsilon}\right)\right],\label{eq:dFr}\\
+\nabla_{\btheta}F_{\btheta,\varepsilon}(r)
+&=
+-\frac{1}{\varepsilon}\E\left[\varphi\left(\frac{r-s_{\btheta}(U)}{\varepsilon}\right)\,\nabla_{\btheta}s_{\btheta}(U)\right].\label{eq:dFtheta}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The integrand in~\eqref{eq:smoothed-cdf} is differentiable in $(r,\btheta)$ for each realization $U$.
+Assumption~\ref{asm:smoothing} gives bounded $\varphi$, and Assumption~\ref{asm:score-diff} provides an integrable envelope for $\nabla_{\btheta}s_{\btheta}(U)$.
+Thus differentiation under the expectation is justified by dominated convergence.
+Applying the chain rule yields~\eqref{eq:dFr} and~\eqref{eq:dFtheta}.
+\end{proof}
+
+Define the \emph{smoothed $\tau$-quantile radius}:
+\begin{equation}\label{eq:rho-eps}
+\rho_{P,\varepsilon}(\btheta)
+\;:=\;
+\inf\{r:\;F_{\btheta,\varepsilon}(r)\ge \tau\}.
+\end{equation}
+
+To ensure uniqueness and differentiability, we assume strict monotonicity at the solution.
+
+\begin{assumption}[Smoothed quantile regularity]\label{asm:smoothed-quantile-reg}
+Fix $\btheta$ and $\varepsilon>0$. Assume there exists $\rho_{P,\varepsilon}(\btheta)\in\R$ such that
+$F_{\btheta,\varepsilon}(\rho_{P,\varepsilon}(\btheta))=\tau$ and
+$\partial_r F_{\btheta,\varepsilon}(\rho_{P,\varepsilon}(\btheta))>0$.
+\end{assumption}
+
+\begin{lemma}[Implicit derivative of the smoothed quantile map]\label{lem:smoothed-quantile-deriv}
+Assume Assumptions~\ref{asm:smoothing},~\ref{asm:score-diff}, and~\ref{asm:smoothed-quantile-reg}.
+Then $\rho_{P,\varepsilon}$ is differentiable at $\btheta$ and
+\begin{equation}\label{eq:rhoeps-deriv}
+\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)
+=
+-\frac{\nabla_{\btheta}F_{\btheta,\varepsilon}(\rho_{P,\varepsilon}(\btheta))}{\partial_r F_{\btheta,\varepsilon}(\rho_{P,\varepsilon}(\btheta))}
+=
+\frac{
+\E\left[\varphi\left(\frac{\rho_{P,\varepsilon}(\btheta)-s_{\btheta}(U)}{\varepsilon}\right)\nabla_{\btheta}s_{\btheta}(U)\right]
+}{
+\E\left[\varphi\left(\frac{\rho_{P,\varepsilon}(\btheta)-s_{\btheta}(U)}{\varepsilon}\right)\right]
+}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first equality is the implicit function theorem applied to $G(\btheta,r)=F_{\btheta,\varepsilon}(r)-\tau$,
+using $\partial_r G=\partial_r F_{\btheta,\varepsilon}>0$ at the root.
+The second equality follows by substituting Lemma~\ref{lem:smoothed-derivatives} into the ratio, noting that the factor $1/\varepsilon$ cancels.
+\end{proof}
+
+\subsection{Empirical tuning estimators}
+
+Given a tuning sample $\cD_{\mathrm{tune}}=\{U_i\}_{i=1}^{n_{\mathrm{tune}}}$, define scores $S_i(\btheta)=s_{\btheta}(U_i)$ and the empirical smoothed CDF
+\begin{equation}\label{eq:Fhat}
+\hat F_{\btheta,\varepsilon}(r)
+:=
+\frac{1}{n_{\mathrm{tune}}}
+\sum_{i=1}^{n_{\mathrm{tune}}}
+\Phi\left(\frac{r-S_i(\btheta)}{\varepsilon}\right).
+\end{equation}
+Define the empirical smoothed quantile radius
+\begin{equation}\label{eq:rhohat-eps}
+\hat\rho_{\varepsilon}(\btheta)
+\;:=\;
+\inf\{r:\;\hat F_{\btheta,\varepsilon}(r)\ge \tau\}.
+\end{equation}
+
+For the gradient of $\hat\rho_{\varepsilon}(\btheta)$, we use the finite-sample analogue of~\eqref{eq:rhoeps-deriv}.
+Let weights
+\[
+\omega_i(\btheta)
+:=
+\varphi\left(\frac{\hat\rho_{\varepsilon}(\btheta)-S_i(\btheta)}{\varepsilon}\right)\ge 0.
+\]
+Assuming $\sum_i \omega_i(\btheta)>0$, define
+\begin{equation}\label{eq:rhohat-grad}
+\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta)
+:=
+\frac{\sum_{i=1}^{n_{\mathrm{tune}}}\omega_i(\btheta)\,\nabla_{\btheta}s_{\btheta}(U_i)}{\sum_{i=1}^{n_{\mathrm{tune}}}\omega_i(\btheta)}.
+\end{equation}
+
+\begin{remark}[Interpretation of~\eqref{eq:rhohat-grad}]
+The weights $\omega_i(\btheta)$ concentrate on points with $S_i(\btheta)$ close to $\hat\rho_{\varepsilon}(\btheta)$.
+Thus~\eqref{eq:rhohat-grad} is a soft analogue of a boundary conditional expectation:
+$\nabla_{\btheta}\rho_P(\btheta)\approx \E[\nabla_{\btheta}s_{\btheta}(U)\mid s_{\btheta}(U)=\rho_P(\btheta)]$.
+\end{remark}
+
+\subsection{Approximate profiled gradient estimator}
+
+Define the smoothed profiled objective:
+\begin{equation}\label{eq:JPeps}
+J_{P,\varepsilon}(\btheta)
+:=
+V\big(\btheta,\rho_{P,\varepsilon}(\btheta)\big).
+\end{equation}
+By the same chain rule as Theorem~\ref{thm:true-oracle-grad}, if differentiable,
+\[
+\nabla_{\btheta}J_{P,\varepsilon}(\btheta)
+=
+\nabla_{\btheta}V(\btheta,\rho_{P,\varepsilon}(\btheta))
++
+\partial_{\rho}V(\btheta,\rho_{P,\varepsilon}(\btheta))\,
+\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta).
+\]
+
+We approximate $\rho_{P,\varepsilon}(\btheta)$ and $\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)$ via the tuning estimators
+$\hat\rho_{\varepsilon}(\btheta)$ and $\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta)$,
+and approximate the envelope terms $\nabla_{\btheta}V$ and $\partial_\rho V$ by solving the robust problem at $(\btheta,\hat\rho_{\varepsilon}(\btheta))$.
+
+Let $\bmu^*(\btheta,\hat\rho_{\varepsilon}(\btheta))$ denote an optimal dual multiplier for the robust solve at $(\btheta,\hat\rho_{\varepsilon}(\btheta))$.
+Define the approximate gradient estimator
+\begin{equation}\label{eq:ghat}
+\boxed{
+\hat{\bg}_{\varepsilon}(\btheta)
+:=
+\underbrace{\sum_{j=1}^m \mu_j^*(\btheta,\hat\rho_{\varepsilon}(\btheta))\,
+\nabla_{\btheta}\sigma_{\cU_{\btheta,\hat\rho_{\varepsilon}(\btheta)}}(\bw_j)}_{\text{envelope shape term}}
+\;+\;
+\underbrace{\left(\sum_{j=1}^m \mu_j^*(\btheta,\hat\rho_{\varepsilon}(\btheta))\,\sigma_{\cU_{\btheta,1}}(\bw_j)\right)}_{\text{envelope size sensitivity}}
+\cdot
+\underbrace{\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta)}_{\text{tuned quantile sensitivity}}.
+}
+\end{equation}
+
+\subsection{Consistency of the tuned gradient (fixed $\varepsilon$)}
+
+We state a consistency theorem under standard regularity.
+To avoid technicalities about set-valued dual solutions, we assume uniqueness/continuity of the dual multiplier map.
+
+\begin{assumption}[Dual uniqueness and continuity]\label{asm:dual-unique}
+For each $(\btheta,\rho)$ in a neighborhood of interest, the robust problem~\eqref{eq:robust} has a unique optimal dual multiplier vector $\bmu^*(\btheta,\rho)$.
+Moreover, $(\btheta,\rho)\mapsto \bmu^*(\btheta,\rho)$ is continuous.
+\end{assumption}
+
+\begin{assumption}[Continuity of support sensitivities]\label{asm:sensitivity-cont}
+For each $j$, the maps $(\btheta,\rho)\mapsto \nabla_{\btheta}\sigma_{\cU_{\btheta,\rho}}(\bw_j)$ and $\btheta\mapsto \sigma_{\cU_{\btheta,1}}(\bw_j)$
+are continuous on the region of interest.
+\end{assumption}
+
+\begin{theorem}[Consistency of the tuned profiled gradient for fixed $\varepsilon$]\label{thm:consistency-eps}
+Assume:
+\begin{itemize}[leftmargin=2em, itemsep=1pt]
+\item $U_1,\dots,U_{n_{\mathrm{tune}}}$ are i.i.d.\ from $P$;
+\item Assumptions~\ref{asm:smoothing},~\ref{asm:score-diff}, and~\ref{asm:smoothed-quantile-reg} hold;
+\item Assumptions~\ref{asm:slater},~\ref{asm:gauge},~\ref{asm:sigma-diff},~\ref{asm:dual-unique}, and~\ref{asm:sensitivity-cont} hold.
+\end{itemize}
+Fix $\varepsilon>0$ and a shape $\btheta$.
+Then, as $n_{\mathrm{tune}}\to\infty$,
+\[
+\hat\rho_{\varepsilon}(\btheta)\to \rho_{P,\varepsilon}(\btheta)
+\quad\text{and}\quad
+\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta)\to \nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)
+\]
+in probability.
+Consequently,
+\begin{equation}\label{eq:consistency-ghat}
+\hat{\bg}_{\varepsilon}(\btheta)\;\to\;\nabla_{\btheta}J_{P,\varepsilon}(\btheta)
+\qquad \text{in probability}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1: uniform convergence of $\hat F_{\btheta,\varepsilon}$.}
+For fixed $\btheta$ and $\varepsilon$, the class of functions
+$r\mapsto \Phi((r-S_i(\btheta))/\varepsilon)$ is uniformly bounded in $[0,1]$ and is Lipschitz in $r$ with constant $\|\varphi\|_{\infty}/\varepsilon$.
+By the law of large numbers and standard stochastic equicontinuity arguments for one-dimensional Lipschitz classes (or by a DKW-type bound for smoothed indicators),
+\[
+\sup_{r\in \R}\abs{\hat F_{\btheta,\varepsilon}(r)-F_{\btheta,\varepsilon}(r)}\to 0
+\quad\text{in probability.}
+\]
+
+\textbf{Step 2: consistency of $\hat\rho_{\varepsilon}(\btheta)$.}
+Since $F_{\btheta,\varepsilon}(r)$ is nondecreasing and continuous in $r$, and by Assumption~\ref{asm:smoothed-quantile-reg} it crosses $\tau$ at a point
+$\rho_{P,\varepsilon}(\btheta)$ with strictly positive derivative $\partial_r F_{\btheta,\varepsilon}$.
+The uniform convergence in Step 1 implies that the level set $\{r:\hat F_{\btheta,\varepsilon}(r)\ge \tau\}$ converges to the population level set,
+hence the left-quantile $\hat\rho_{\varepsilon}(\btheta)$ converges in probability to $\rho_{P,\varepsilon}(\btheta)$.
+
+\textbf{Step 3: consistency of $\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta)$.}
+Write the population derivative from Lemma~\ref{lem:smoothed-quantile-deriv} as
+\[
+\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)
+=
+\frac{\E[\varphi((\rho_{P,\varepsilon}-S_{\btheta})/\varepsilon)\,\nabla_{\btheta}s_{\btheta}(U)]}
+{\E[\varphi((\rho_{P,\varepsilon}-S_{\btheta})/\varepsilon)]}.
+\]
+The numerator and denominator are expectations of integrable random variables by Assumptions~\ref{asm:smoothing} and~\ref{asm:score-diff},
+so their empirical averages converge in probability to the expectations.
+Since $\hat\rho_{\varepsilon}(\btheta)\to \rho_{P,\varepsilon}(\btheta)$ and $\varphi$ is continuous and bounded,
+a continuous mapping argument yields
+\[
+\sum_{i=1}^{n_{\mathrm{tune}}}\omega_i(\btheta)\Big/ n_{\mathrm{tune}}
+\to
+\E\left[\varphi\left(\frac{\rho_{P,\varepsilon}(\btheta)-S_{\btheta}}{\varepsilon}\right)\right],
+\]
+and similarly for the weighted average of $\nabla_{\btheta}s_{\btheta}(U_i)$.
+Because the limit denominator is strictly positive by Assumption~\ref{asm:smoothed-quantile-reg} and~\eqref{eq:dFr},
+the ratio converges to $\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)$.
+
+\textbf{Step 4: consistency of $\hat{\bg}_{\varepsilon}(\btheta)$.}
+By Step 2, $(\btheta,\hat\rho_{\varepsilon}(\btheta))\to (\btheta,\rho_{P,\varepsilon}(\btheta))$ in probability.
+Assumptions~\ref{asm:dual-unique} and~\ref{asm:sensitivity-cont} imply that all envelope terms in~\eqref{eq:ghat} vary continuously in $(\btheta,\rho)$.
+Thus the first two factors in~\eqref{eq:ghat} converge to their population counterparts at $(\btheta,\rho_{P,\varepsilon}(\btheta))$.
+Combining with Step 3 gives convergence of $\hat{\bg}_{\varepsilon}(\btheta)$ to the chain-rule gradient $\nabla_{\btheta}J_{P,\varepsilon}(\btheta)$.
+\end{proof}
+
+\subsection{Smoothing bias: connecting $J_{P,\varepsilon}$ to $J_P$ as $\varepsilon\to 0$}
+
+Theorem~\ref{thm:consistency-eps} shows that for fixed $\varepsilon>0$, the tuning-based gradient estimator targets the gradient of the smoothed profiled objective $J_{P,\varepsilon}$.
+We now state conditions under which $J_{P,\varepsilon}$ (and its gradient) approach the oracle objective $J_P$ as $\varepsilon\downarrow 0$.
+
+\begin{assumption}[Local smoothness of the score CDF]\label{asm:cdf-smooth}
+Fix $\btheta$ and let $\rho_P(\btheta)$ be the $\tau$-quantile.
+Assume $F_{\btheta}$ is continuously differentiable in a neighborhood of $\rho_P(\btheta)$ with density $f_{\btheta}$ satisfying
+$f_{\btheta}(\rho_P(\btheta))\ge f_{\min}>0$, and $f_{\btheta}$ is Lipschitz on that neighborhood.
+\end{assumption}
+
+\begin{lemma}[Smoothed quantile converges to the true quantile]\label{lem:rhoeps-to-rho}
+Assume Assumptions~\ref{asm:smoothing} and~\ref{asm:cdf-smooth}. Fix $\btheta$.
+Then $\rho_{P,\varepsilon}(\btheta)\to \rho_P(\btheta)$ as $\varepsilon\downarrow 0$.
+Moreover, there exists $C<\infty$ (depending on $f_{\min}$ and local smoothness) such that for sufficiently small $\varepsilon$,
+\[
+\abs{\rho_{P,\varepsilon}(\btheta)-\rho_P(\btheta)}\le C\,\varepsilon.
+\]
+\end{lemma}
+
+\begin{proof}
+The smoothed CDF $F_{\btheta,\varepsilon}$ is a mollification of the (possibly nonsmooth) indicator CDF.
+Under Assumption~\ref{asm:smoothing}, $\Phi((r-S)/\varepsilon)$ converges pointwise to $\mathbf{1}\{S\le r\}$ as $\varepsilon\downarrow 0$,
+and is dominated by $1$, so $F_{\btheta,\varepsilon}(r)\to F_{\btheta}(r)$ for each $r$ by dominated convergence.
+
+Under Assumption~\ref{asm:cdf-smooth}, $F_{\btheta}$ is strictly increasing near $\rho_P(\btheta)$ with slope bounded below by $f_{\min}$.
+Since $F_{\btheta,\varepsilon}$ converges uniformly to $F_{\btheta}$ on compact neighborhoods of $\rho_P(\btheta)$ (by standard properties of mollifiers under local Lipschitzness),
+the solutions to $F_{\btheta,\varepsilon}(r)=\tau$ converge to the solution to $F_{\btheta}(r)=\tau$, i.e., $\rho_{P,\varepsilon}(\btheta)\to \rho_P(\btheta)$.
+The linear bound $\abs{\rho_{P,\varepsilon}-\rho_P}\le C\varepsilon$ follows from a first-order Taylor expansion of $F_{\btheta}$ around $\rho_P(\btheta)$,
+using the lower bound $f_{\min}$ to invert the CDF and the fact that the mollification error in CDF space is $O(\varepsilon)$ under local smoothness.
+\end{proof}
+
+\begin{remark}[Gradient convergence as $\varepsilon\downarrow 0$]
+Under additional regularity ensuring that the implicit derivative formula~\eqref{eq:quantile-ift} is valid and stable (Assumption~\ref{asm:quantile-reg}),
+and that $\btheta\mapsto V(\btheta,\rho)$ is smooth enough in a neighborhood of $\rho_P(\btheta)$,
+one can show $\nabla_{\btheta}J_{P,\varepsilon}(\btheta)\to \nabla_{\btheta}J_P(\btheta)$ as $\varepsilon\downarrow 0$.
+The key idea is: $\rho_{P,\varepsilon}(\btheta)\to \rho_P(\btheta)$ (Lemma~\ref{lem:rhoeps-to-rho}),
+$\partial_\rho V$ is continuous in $\rho$ (by Assumption~\ref{asm:sensitivity-cont} and dual continuity),
+and $\nabla_{\btheta}\rho_{P,\varepsilon}(\btheta)$ approximates the boundary conditional expectation defining $\nabla_{\btheta}\rho_P(\btheta)$.
+We omit the most technical measure-theoretic steps here; in applications, the smoothing is used explicitly, so $J_{P,\varepsilon}$ is the effective target.
+\end{remark}
+
+\subsection{Putting it together: tuned gradients + final conformal calibration}
+
+The final deployed radius is \emph{not} $\hat\rho_{\varepsilon}$ (tuning), but the conformal radius $\hat\rho_{\tau}$ computed on $\cD_{\mathrm{cal}}$.
+This preserves finite-sample marginal coverage regardless of tuning approximations.
+
+\begin{theorem}[Coverage is preserved under tuned training]\label{thm:coverage-preserved}
+Assume Assumption~\ref{asm:exchange} holds for the calibration sample $\cD_{\mathrm{cal}}$ and a fresh $U_{\mathrm{new}}$.
+Let $\hat\btheta$ be any (possibly random) shape computed using $\cD_{\mathrm{tr}}$ and $\cD_{\mathrm{tune}}$ only (no dependence on $\cD_{\mathrm{cal}}$).
+Compute $\hat\rho_\tau$ on $\cD_{\mathrm{cal}}$ using~\eqref{eq:conformal-rho} with shape fixed to $\hat\btheta$.
+Then
+\[
+\Prob\big(U_{\mathrm{new}}\in \cU_{\hat\btheta,\hat\rho_\tau}\big)\ge \tau.
+\]
+\end{theorem}
+
+\begin{proof}
+Condition on $\hat\btheta$. By construction, $\hat\btheta$ is independent of $\cD_{\mathrm{cal}}$.
+Applying Theorem~\ref{thm:conformal} conditional on $\hat\btheta$ yields
+$\Prob(U_{\mathrm{new}}\in \cU_{\hat\btheta,\hat\rho_\tau}\mid \hat\btheta)\ge \tau$ almost surely.
+Taking expectations over $\hat\btheta$ gives the unconditional bound.
+\end{proof}
+
+\section{Objective degradation from calibration (optional quantitative bounds)}
+
+This section provides a standard way to translate radius mismatch into robust objective degradation.
+It is optional for the core logical justification of Option 2 but useful in a full theory write-up.
+
+\begin{assumption}[Lipschitzness in radius]\label{asm:lipschitz-rho}
+There exists $L_{\rho}<\infty$ such that for all $\btheta$ and all $\rho_1,\rho_2>0$,
+\[
+\abs{V(\btheta,\rho_2)-V(\btheta,\rho_1)} \le L_{\rho}\abs{\rho_2-\rho_1}.
+\]
+\end{assumption}
+
+\begin{proposition}[Radius error implies objective error]\label{prop:obj-gap}
+Assume Assumption~\ref{asm:lipschitz-rho}.
+Fix $\btheta$. Then for any (possibly random) radius $\hat\rho$,
+\[
+\abs{V(\btheta,\hat\rho)-V(\btheta,\rho_P(\btheta))}
+\le
+L_{\rho}\,\abs{\hat\rho-\rho_P(\btheta)}.
+\]
+\end{proposition}
+
+\begin{proof}
+Apply Assumption~\ref{asm:lipschitz-rho} with $\rho_1=\rho_P(\btheta)$ and $\rho_2=\hat\rho$.
+\end{proof}
+
+For i.i.d.\ data and continuous score distributions, conformal order statistics admit an exact Beta distribution after applying the probability integral transform.
+
+\begin{lemma}[Order statistic in CDF space]\label{lem:beta}
+Assume $U_1,\dots,U_{n_{\mathrm{cal}}}$ are i.i.d.\ and $S_i=s_{\btheta}(U_i)$ has continuous CDF $F_{\btheta}$.
+Let $S_{(k)}$ be the $k$-th order statistic. Then
+\[
+F_{\btheta}\big(S_{(k)}\big)\;\sim\;\mathrm{Beta}\big(k,\;n_{\mathrm{cal}}+1-k\big).
+\]
+\end{lemma}
+
+\begin{proof}
+By the probability integral transform, $T_i:=F_{\btheta}(S_i)$ are i.i.d.\ uniform on $[0,1]$.
+Order statistics of i.i.d.\ uniforms satisfy $T_{(k)}\sim \mathrm{Beta}(k,n_{\mathrm{cal}}+1-k)$.
+Finally, $T_{(k)}=F_{\btheta}(S_{(k)})$ almost surely because $F_{\btheta}$ is continuous and strictly increasing on the support.
+\end{proof}
+
+Combining Lemma~\ref{lem:beta} with a density lower bound yields a quantitative radius error rate; then Proposition~\ref{prop:obj-gap} yields objective degradation rates.
+We omit the final algebraic corollaries here, since the exact form depends on the desired tail probability and local density constants.
+
+\section{Algorithm (Option 2)}
+
+\begin{algorithm}[t]
+\caption{Option 2: Tuned Profiled-Gradient Training + Final Conformal Calibration}
+\label{alg:opt2}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} training split $\cD_{\mathrm{tr}}$, tuning split $\cD_{\mathrm{tune}}$, calibration split $\cD_{\mathrm{cal}}$, target $\tau$, smoothing $\varepsilon$, steps $K$, step sizes $\{\eta_k\}$
+\STATE \textbf{Initialize:} shape parameter $\btheta_0\in \Theta$
+\FOR{$k=0,1,\dots,K-1$}
+    \STATE \textbf{(Tuning)} Compute $\hat\rho_{\varepsilon}(\btheta_k)$ from $\cD_{\mathrm{tune}}$ via~\eqref{eq:rhohat-eps}
+    \STATE \textbf{(Tuning)} Compute $\widehat{\nabla_{\btheta}\rho_{\varepsilon}}(\btheta_k)$ via~\eqref{eq:rhohat-grad}
+    \STATE \textbf{(Robust solve)} Solve the robust problem~\eqref{eq:robust} at $(\btheta_k,\hat\rho_{\varepsilon}(\btheta_k))$ to obtain unique $\bmu^*(\btheta_k,\hat\rho_{\varepsilon}(\btheta_k))$
+    \STATE \textbf{(Gradient)} Form $\hat{\bg}_{\varepsilon}(\btheta_k)$ using~\eqref{eq:ghat}
+    \STATE \textbf{(Update)} $\btheta_{k+1}\leftarrow \Pi_{\Theta}\big(\btheta_k - \eta_k\,\hat{\bg}_{\varepsilon}(\btheta_k)\big)$
+\ENDFOR
+\STATE \textbf{Output shape:} $\hat\btheta:=\btheta_K$
+\STATE \textbf{(Final conformal calibration)} Compute $\hat\rho_\tau$ on $\cD_{\mathrm{cal}}$ using~\eqref{eq:conformal-rho} with shape $\hat\btheta$
+\STATE \textbf{Deploy} uncertainty set $\cU_{\hat\btheta,\hat\rho_\tau}$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{remark}[Why this is ``one step'' when $P$ is known]
+When $P$ is known, $\rho_P(\btheta)$ is a deterministic function and $J_P(\btheta)=V(\btheta,\rho_P(\btheta))$ can be optimized directly
+using the exact gradient~\eqref{eq:true-grad-expanded}. In the distribution-free regime, the tuning split provides a statistically consistent approximation of the missing term,
+and the independent calibration split guarantees exact finite-sample marginal coverage for deployment.
+\end{remark}
+
+\end{document}

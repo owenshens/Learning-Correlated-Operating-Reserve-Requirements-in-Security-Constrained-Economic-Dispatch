@@ -1,0 +1,98 @@
+# Review Prompt: Final Pre-Submission Check
+
+You are reviewing the paper **"Differentiable Robust Optimization for Learning Correlated Uncertainty Sets in Operating Reserve Markets"** for submission to **IEEE Transactions on Power Systems**. The main LaTeX file is `Paper/IEEE Draft`.
+
+The supporting experiment code is in `Experiment/` (key files: `sced.py`, `generate_uncertainty.py`, `parse_ieee118.py`, `run_experiment.py`, `run_coupled_experiment.py`). The paper has already gone through multiple rounds of revision addressing reviewer comments. Your job is a **final clarity and presentation pass**, not a correctness audit.
+
+---
+
+## Scope and Priorities
+
+Focus on **clarity, insight, and compactness** — the three qualities that distinguish a strong IEEE TPS paper. Evaluate every paragraph against the question: *does this help a power-systems reader understand and trust our contribution?*
+
+### 1. Experiment Section (Highest Priority)
+
+The experiment section (Section V) is the most critical part for reviewers. Check for:
+
+- **Setup transparency.** Can a reader reproduce the experiment from the paper alone? Are the following clearly stated:
+  - Data generation process (VAR(1), 15D uncertainty, context-dependent innovations)
+  - The four-way data split (train/tune/calibrate/test) and why each split is needed
+  - IEEE 118-bus system parameters (zones, generators, cost coefficients, PTDF)
+  - Baseline methods and what exactly differs between them
+  - How the allocation matrix A maps 15D uncertainty to 10 zonal reserves
+
+- **Results clarity.** For each table and figure:
+  - Is the takeaway stated in one sentence before or after the table?
+  - Are column headers self-explanatory? (Flag any abbreviation not defined nearby.)
+  - Do the numbers in the text match the tables exactly?
+  - Is the cost decomposition (energy vs. reserve) clear?
+
+- **Insight density.** For each numbered finding in the discussion:
+  - Does it say something non-obvious, or does it merely restate the table?
+  - Is the economic/operational intuition explained (not just the math)?
+  - Could any finding be cut or merged without losing information?
+
+- **Coupled experiment (Experiment 2).** This is the paper's differentiating contribution. Verify:
+  - The transfer limit construction (T_z^max) is fully specified
+  - The reader understands *why* learned sets benefit more under coupling
+  - The tight-zone identification (zones 5, 8, 10) is motivated
+
+### 2. Method Exposition (Second Priority)
+
+- **Profiled gradient.** The key equation decomposes into shape term + quantile-sensitivity correction. Check that:
+  - The intuition for each term is stated in plain language
+  - The reader understands what "no differentiation through the solver" means operationally
+  - Algorithm 1 and Algorithm 2 are self-contained (a reader should be able to implement from the pseudocode)
+
+- **Conformal calibration.** Verify the explanation covers:
+  - Why conformal prediction is needed (distribution-free coverage guarantee)
+  - What the calibration set is and how it differs from the tune set
+  - The finite-sample coverage bound
+
+- **Notation consistency.** Scan for:
+  - Any symbol used before it is defined
+  - Any symbol defined twice with different meanings (especially \cL, which was previously used for both lines and loss)
+  - Vectors vs. scalars vs. matrices — are bold/non-bold conventions consistent?
+
+### 3. Writing Quality (Third Priority)
+
+- **Redundancy.** Flag any sentence that restates information already given elsewhere. The paper has been trimmed but may still have residual repetition, especially:
+  - Discussion paragraphs that restate table numbers
+  - Introduction promises that are repeated in the contribution list
+  - Method overview sentences that duplicate the formal definitions
+
+- **Passive voice and hedging.** IEEE TPS readers expect direct, active writing. Flag sentences like "It can be seen that..." or "It is worth noting that..." and suggest replacements.
+
+- **Length.** IEEE TPS regular papers target ~8 pages double-column. Flag any section that seems disproportionately long relative to its contribution. The theory section should be tight; the experiment section can be more spacious.
+
+- **Figure and table placement.** Are figures/tables referenced near where they appear? Any orphaned references?
+
+---
+
+## Output Format
+
+Structure your review as:
+
+### Critical Issues (must fix before submission)
+- Numbered list of issues that would confuse a reviewer or undermine the paper's claims.
+
+### Recommended Improvements (should fix)
+- Numbered list of changes that improve clarity or compactness but are not blocking.
+
+### Minor Nits (optional polish)
+- Numbered list of small wording, formatting, or consistency issues.
+
+For each issue, provide:
+1. **Location**: Line number or section reference
+2. **Problem**: What is unclear, redundant, or missing
+3. **Suggested fix**: Concrete replacement text or structural change
+
+---
+
+## What NOT to Do
+
+- Do not rewrite the paper. Suggest targeted edits only.
+- Do not change the mathematical results or proofs.
+- Do not add content — the paper needs to be shorter, not longer.
+- Do not flag issues that have already been addressed in previous review rounds (the revision history is in `Paper/review`).
+- Do not suggest adding more experiments. The experiment scope is fixed.

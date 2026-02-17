@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Raw data (too large for git, ~256MB)
+Experiment/raw_data/
+
+# Claude Code local config
+.claude/
+
+# OS files
+.DS_Store
