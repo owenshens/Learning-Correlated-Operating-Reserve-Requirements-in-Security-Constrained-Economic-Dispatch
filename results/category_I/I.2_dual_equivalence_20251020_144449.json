@@ -1,0 +1,26 @@
+{
+  "experiment_name": "I.2_dual_equivalence",
+  "start_time": "2025-10-20T14:44:49.267852",
+  "end_time": "2025-10-20T14:46:24.399382",
+  "duration_seconds": 95.13152575492859,
+  "parameters": {
+    "problem_sizes": [
+      [
+        5,
+        10,
+        3
+      ],
+      [
+        10,
+        15,
+        5
+      ]
+    ],
+    "n_runs": 5,
+    "uncertainty_sets": [
+      "L2Ball"
+    ]
+  },
+  "results": {},
+  "runs": []
+}

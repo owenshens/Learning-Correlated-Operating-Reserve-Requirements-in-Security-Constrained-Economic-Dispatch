@@ -1,0 +1,7832 @@
+[
+  {
+    "experiment_id": 1,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.012212991714477539,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 161626.14526535454,
+        "solve_time": 0.16061186790466309,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.03695290572335602,
+          0.01766996075143593,
+          0.09122639555327984
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 161228.23037012544,
+        "solve_time": 0.1598060131072998,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.020959707614711776,
+          -0.013404639311132262,
+          0.11563565307415602
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 161150.29044975413,
+        "solve_time": 0.04308605194091797,
+        "iterations": 3,
+        "worst_case_u_p": [
+          -0.047116529780866036,
+          -0.03831804921579816,
+          0.07944658410343666
+        ],
+        "worst_case_u_c": [
+          0.032535554684731356,
+          -0.03796627031138106
+        ],
+        "metadata": {
+          "total_inner_iterations": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 2,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.003813028335571289,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 145287.7440678939,
+        "solve_time": 0.1577930450439453,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.058044085617233,
+          -0.0036332652202461565,
+          0.08134914571585049
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 144909.1986191211,
+        "solve_time": 0.1618199348449707,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.11562211018425514,
+          0.006081358983767972,
+          0.028296530831976946
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 145027.72052590936,
+        "solve_time": 0.04279494285583496,
+        "iterations": 3,
+        "worst_case_u_p": [
+          0.09438818190052725,
+          0.008476088872257568,
+          0.031922202852287196
+        ],
+        "worst_case_u_c": [
+          -0.040810229150515236,
+          0.028888149762185122
+        ],
+        "metadata": {
+          "total_inner_iterations": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 3,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.003592967987060547,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159924.2419165222,
+        "solve_time": 0.16343021392822266,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0888281061079569,
+          0.038275306923768994,
+          0.025388352549246568
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 160006.5866742451,
+        "solve_time": 0.15582799911499023,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.120886288317408,
+          0.02911371168259201,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 159256.02776238337,
+        "solve_time": 0.06172895431518555,
+        "iterations": 4,
+        "worst_case_u_p": [
+          -0.05098886877853524,
+          0.013073657783981788,
+          0.08502478893142074
+        ],
+        "worst_case_u_c": [
+          0.030460433784693198,
+          0.039650497773020724
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 4,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004094839096069336,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 160859.78098858014,
+        "solve_time": 0.1593930721282959,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.055429358585034026,
+          0.026504941127153885,
+          0.13683959332991974
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 160286.69855527935,
+        "solve_time": 0.15835213661193848,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.031439561422067636,
+          -0.02010695896669837,
+          0.17345347961123397
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 160042.79141988602,
+        "solve_time": 0.041877031326293945,
+        "iterations": 3,
+        "worst_case_u_p": [
+          -0.07059779822556057,
+          -0.05781303639034405,
+          0.1190529449826076
+        ],
+        "worst_case_u_c": [
+          0.06568776250744597,
+          -0.07539972053506151
+        ],
+        "metadata": {
+          "total_inner_iterations": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 5,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.005052089691162109,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 144951.61393956083,
+        "solve_time": 0.16118288040161133,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0870661284258495,
+          -0.005449897830369236,
+          0.12202371857377572
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 144380.72217236698,
+        "solve_time": 0.15826821327209473,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.17343316527638264,
+          0.009122038475651954,
+          0.04244479624796541
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144524.80655562755,
+        "solve_time": 0.05822491645812988,
+        "iterations": 4,
+        "worst_case_u_p": [
+          0.14169607437925041,
+          0.01337473727650737,
+          0.04736389878688549
+        ],
+        "worst_case_u_c": [
+          -0.08083701015069615,
+          0.058867459516240804
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 6,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.003936052322387695,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159557.47381268817,
+        "solve_time": 0.15422677993774414,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.13324215916193533,
+          0.057412960385653494,
+          0.03808252882386985
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159689.42732288147,
+        "solve_time": 0.16136670112609863,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.18132943247611194,
+          0.04367056752388801,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158370.96473889242,
+        "solve_time": 0.06416201591491699,
+        "iterations": 4,
+        "worst_case_u_p": [
+          -0.07650838659690729,
+          0.018935798798004323,
+          0.12762406632065784
+        ],
+        "worst_case_u_c": [
+          0.0609128837830713,
+          0.07930712823718968
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 7,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.0056629180908203125,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 160089.0924583688,
+        "solve_time": 0.1652519702911377,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.07390581144671204,
+          0.03533992150287186,
+          0.18245279110655968
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159356.74272122793,
+        "solve_time": 0.17365097999572754,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.04191941522942355,
+          -0.026809278622264524,
+          0.23127130614831204
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158920.3098978007,
+        "solve_time": 0.043328046798706055,
+        "iterations": 3,
+        "worst_case_u_p": [
+          -0.09404441911307265,
+          -0.07752151747418892,
+          0.1585750975474515
+        ],
+        "worst_case_u_c": [
+          0.09930439270884386,
+          -0.11242169536494152
+        ],
+        "metadata": {
+          "total_inner_iterations": 3
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 8,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.004080057144165039,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 144625.5851189026,
+        "solve_time": 0.16324520111083984,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.116088171234466,
+          -0.007266530440492313,
+          0.16269829143170098
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 143863.49700392733,
+        "solve_time": 0.16439604759216309,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.23124422036851028,
+          0.012162717967535944,
+          0.05659306166395389
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144029.77107173126,
+        "solve_time": 0.06073904037475586,
+        "iterations": 4,
+        "worst_case_u_p": [
+          0.18903461786743073,
+          0.018785730229200277,
+          0.0625540533256651
+        ],
+        "worst_case_u_c": [
+          -0.12010018652103108,
+          0.08986626284437083
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 9,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.00439906120300293,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159200.09010189486,
+        "solve_time": 0.16397500038146973,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1776562122159138,
+          0.07655061384753799,
+          0.050776705098493136
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159404.57043581494,
+        "solve_time": 0.16000103950500488,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.241772576634816,
+          0.05822742336518402,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 157492.7168877372,
+        "solve_time": 0.0730900764465332,
+        "iterations": 4,
+        "worst_case_u_p": [
+          -0.1021082159564907,
+          0.024298185026715335,
+          0.1702454417556904
+        ],
+        "worst_case_u_c": [
+          0.09135556870539963,
+          0.11897125731248287
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 10,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.005012035369873047,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 161832.197237252,
+        "solve_time": 0.1621417999267578,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.020149580594785492,
+          0.0,
+          0.07985041940521452
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 161228.23037012544,
+        "solve_time": 0.1597309112548828,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.020959707614711776,
+          -0.013404639311132262,
+          0.11563565307415602
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 161571.9347546758,
+        "solve_time": 0.0242917537689209,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1000000000003638
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.0500000000001819
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 11,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.00485992431640625,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 145517.60874934169,
+        "solve_time": 0.15799498558044434,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.03718221694657785,
+          0.0,
+          0.06281778305342216
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 144909.1986191211,
+        "solve_time": 0.15938901901245117,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.11562211018425514,
+          0.006081358983767972,
+          0.028296530831976946
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 145089.39967988266,
+        "solve_time": 0.024498939514160156,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.1000000000003638,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          -0.049999999999954525,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 12,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.005207061767578125,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 160205.25139513664,
+        "solve_time": 0.15983796119689941,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.07513060266967733,
+          0.01952252357068764,
+          0.00534687375963502
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 160006.5866742451,
+        "solve_time": 0.1568620204925537,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.120886288317408,
+          0.02911371168259201,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 159495.30155183154,
+        "solve_time": 0.025253772735595703,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1000000000003638
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0500000000001819
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 13,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004603862762451172,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 161183.75300519494,
+        "solve_time": 0.16050410270690918,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.030224370892178214,
+          0.0,
+          0.11977562910782177
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 160286.69855527935,
+        "solve_time": 0.15799498558044434,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.031439561422067636,
+          -0.02010695896669837,
+          0.17345347961123397
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 160712.5626917927,
+        "solve_time": 0.024396181106567383,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1499999999996362
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.09999999999990905
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 14,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.003986835479736328,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 145285.02081984153,
+        "solve_time": 0.15518403053283691,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.05577332541986678,
+          0.0,
+          0.09422667458013322
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 144380.72217236698,
+        "solve_time": 0.16211295127868652,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.17343316527638264,
+          0.009122038475651954,
+          0.04244479624796541
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144620.53036093785,
+        "solve_time": 0.02408599853515625,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.1499999999996362,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          -0.10000000000002274,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 15,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.00439906120300293,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159973.48344845668,
+        "solve_time": 0.16054606437683105,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.11269590400451598,
+          0.029283785356031482,
+          0.00802031063945255
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159689.42732288147,
+        "solve_time": 0.1560368537902832,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.18132943247611194,
+          0.04367056752388801,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158767.51059432438,
+        "solve_time": 0.024372100830078125,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1499999999996362
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.1000000000003638
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 16,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004483938217163086,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 160540.9141039989,
+        "solve_time": 0.16000795364379883,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.040299161189570984,
+          0.0,
+          0.15970083881042904
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159356.74272122793,
+        "solve_time": 0.15724897384643555,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.04191941522942355,
+          -0.026809278622264524,
+          0.23127130614831204
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 159850.34314518544,
+        "solve_time": 0.023247241973876953,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.2000000000007276
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.15000000000009095
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 17,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.0039520263671875,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 145058.07399087338,
+        "solve_time": 0.15297698974609375,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0743644338931557,
+          0.0,
+          0.12563556610684432
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 143863.49700392733,
+        "solve_time": 0.15775489807128906,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.23124422036851028,
+          0.012162717967535944,
+          0.05659306166395389
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144159.85860738272,
+        "solve_time": 0.023972749710083008,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.2000000000007276,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          -0.14999999999997726,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 18,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.004271030426025391,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159747.45203277067,
+        "solve_time": 0.1584329605102539,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.15026120533935466,
+          0.03904504714137528,
+          0.01069374751927004
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 159404.57043581494,
+        "solve_time": 0.16311025619506836,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.241772576634816,
+          0.05822742336518402,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158046.98085257813,
+        "solve_time": 0.026608943939208984,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.2000000000007276
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.1499999999996362
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 19,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004763126373291016,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 161478.1597346117,
+        "solve_time": 0.16242003440856934,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.040648196293998205,
+          0.01943695682576977,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 159910.75979504973,
+        "solve_time": 0.026075124740600586,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          -0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.05,
+          -0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 20,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.0048062801361083984,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 145216.48220181442,
+        "solve_time": 0.16962194442749023,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0638484941748843,
+          -0.003996591742015885,
+          0.0894840602817286
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144702.58639102848,
+        "solve_time": 0.023685693740844727,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          -0.05,
+          0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 21,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.004967212677001953,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159850.12829822127,
+        "solve_time": 0.16261506080627441,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.09771091671239703,
+          0.042102837613407336,
+          0.027927187802354717
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158620.12837756964,
+        "solve_time": 0.02541804313659668,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.05,
+          0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 22,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004983186721801758,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 160636.3597260627,
+        "solve_time": 0.15938401222229004,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0609722944409973,
+          0.02915543523865465,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 158131.4064387306,
+        "solve_time": 0.02502298355102539,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.15,
+          -0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.1,
+          -0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 23,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.004550933837890625,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 144849.61399324844,
+        "solve_time": 0.16568613052368164,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.09577274126232643,
+          -0.005994887613023828,
+          0.13422609042259287
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 144047.62924020854,
+        "solve_time": 0.025303125381469727,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.15,
+          0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          -0.1,
+          0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 24,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.00437617301940918,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159449.28717181672,
+        "solve_time": 0.1631300449371338,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.14656637506859552,
+          0.06315425642011101,
+          0.041890781703532075
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 157381.68622860868,
+        "solve_time": 0.025928020477294922,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.15,
+          0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.1,
+          0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 25,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 163145.43613727973,
+        "solve_time": 0.004111051559448242,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159789.28950050764,
+        "solve_time": 0.16001486778259277,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.08129639258799641,
+          0.03887391365153954,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 156327.39027116046,
+        "solve_time": 0.02458500862121582,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.2,
+          -0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.15,
+          -0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 26,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 146024.1941562304,
+        "solve_time": 0.0038042068481445312,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 144495.09339385893,
+        "solve_time": 0.16013169288635254,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.1276969883497686,
+          -0.00799318348403177,
+          0.1789681205634572
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 143411.8552630333,
+        "solve_time": 0.025006771087646484,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.2,
+          0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          -0.15,
+          0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 27,
+    "problem_config": {
+      "n_agents": 5,
+      "avg_vars_per_agent": 10,
+      "n_resources": 2,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 160686.4486781125,
+        "solve_time": 0.0050220489501953125,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 159060.561689187,
+        "solve_time": 0.16306400299072266,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.19542183342479405,
+          0.08420567522681467,
+          0.05585437560470943
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 156178.9609229388,
+        "solve_time": 0.02538323402404785,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.2,
+          0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.15,
+          0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 28,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.011365890502929688,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315430.1521651308,
+        "solve_time": 0.43348002433776855,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.018552884574407028,
+          -0.050810265186147,
+          0.08410771323536356
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 315502.20685749303,
+        "solve_time": 0.3871431350708008,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.001006466173612268,
+          0.03159804240136088,
+          0.11739549142502687
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 314508.3291192467,
+        "solve_time": 0.27405476570129395,
+        "iterations": 6,
+        "worst_case_u_p": [
+          -0.022561422585541044,
+          -0.04709941926037708,
+          0.08527969814822202
+        ],
+        "worst_case_u_c": [
+          0.03621724101108614,
+          -0.03447189367506374
+        ],
+        "metadata": {
+          "total_inner_iterations": 6
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 29,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.016707897186279297,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 278603.239975975,
+        "solve_time": 0.40166687965393066,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.04505633659371636,
+          -0.0420654345004476,
+          0.07874278222822896
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 278547.88833080453,
+        "solve_time": 0.38478994369506836,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.08668065464142169,
+          0.0,
+          0.06331934535857835
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 277270.83946680475,
+        "solve_time": 0.2123270034790039,
+        "iterations": 5,
+        "worst_case_u_p": [
+          0.013305095963517824,
+          -0.06108144334774677,
+          0.07805146827547568
+        ],
+        "worst_case_u_c": [
+          -0.04366434092368677,
+          0.024360322898107346
+        ],
+        "metadata": {
+          "total_inner_iterations": 5
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 30,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.016011953353881836,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288772.8208552844,
+        "solve_time": 0.40694379806518555,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.04796238571040452,
+          0.05553046023151206,
+          -0.06794098574088282
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288745.2681261548,
+        "solve_time": 0.40352725982666016,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.15000000000000002,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 287934.3147169708,
+        "solve_time": 0.2714238166809082,
+        "iterations": 6,
+        "worst_case_u_p": [
+          0.06913504610144462,
+          0.049899753686701846,
+          -0.05225284664549496
+        ],
+        "worst_case_u_c": [
+          0.019100816827649785,
+          -0.046207778528258324
+        ],
+        "metadata": {
+          "total_inner_iterations": 6
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 31,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.014981746673583984,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315141.9443489646,
+        "solve_time": 0.39389705657958984,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.027829326861610538,
+          -0.0762153977792205,
+          0.12616156985304533
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 315243.453924255,
+        "solve_time": 0.39788079261779785,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1377689186216633,
+          -0.016569232611782926,
+          0.07066184876655376
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 313327.5602362072,
+        "solve_time": 0.3814260959625244,
+        "iterations": 8,
+        "worst_case_u_p": [
+          -0.030050811835754577,
+          -0.06936912259636906,
+          0.1295564492343858
+        ],
+        "worst_case_u_c": [
+          0.07274753919068105,
+          -0.0686133772795096
+        ],
+        "metadata": {
+          "total_inner_iterations": 8
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 32,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.01434326171875,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 279052.44004957424,
+        "solve_time": 0.40204811096191406,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.06758450489057453,
+          -0.06309815175067139,
+          0.1181141733423434
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 278855.9839553619,
+        "solve_time": 0.39252519607543945,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.13002098196213246,
+          0.0,
+          0.09497901803786749
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 276404.25934796885,
+        "solve_time": 0.30534815788269043,
+        "iterations": 7,
+        "worst_case_u_p": [
+          0.016679940883620643,
+          -0.09070196888208815,
+          0.11830017926035291
+        ],
+        "worst_case_u_c": [
+          -0.08722123451579492,
+          0.04891274117794574
+        ],
+        "metadata": {
+          "total_inner_iterations": 7
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 33,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.011226892471313477,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288549.47262756666,
+        "solve_time": 0.3936920166015625,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.07194357856560678,
+          0.08329569034726808,
+          -0.10191147861132423
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288492.2530879183,
+        "solve_time": 0.38483309745788574,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.00767393247296342,
+          0.1292703426914084,
+          -0.08805572483562812
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 286878.8580559228,
+        "solve_time": 0.4669969081878662,
+        "iterations": 10,
+        "worst_case_u_p": [
+          0.10231143583219901,
+          0.07547998309813067,
+          -0.07959360683785936
+        ],
+        "worst_case_u_c": [
+          0.038237797896399826,
+          -0.0924005996302734
+        ],
+        "metadata": {
+          "total_inner_iterations": 10
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 34,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.012588024139404297,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 314879.06173725857,
+        "solve_time": 0.3913149833679199,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.037105769148814055,
+          -0.101620530372294,
+          0.16821542647072713
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 314959.8320545297,
+        "solve_time": 0.4038369655609131,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1836918914955511,
+          -0.02209231014904388,
+          0.09421579835540501
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 312161.1838595794,
+        "solve_time": 0.7606649398803711,
+        "iterations": 11,
+        "worst_case_u_p": [
+          -0.03552434469720968,
+          -0.09098473722768566,
+          0.17452735752724508
+        ],
+        "worst_case_u_c": [
+          0.10959232253802219,
+          -0.10241837159768803
+        ],
+        "metadata": {
+          "total_inner_iterations": 11
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 35,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.014348983764648438,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 279513.3661318492,
+        "solve_time": 0.37400293350219727,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.09011267318743273,
+          -0.0841308690008952,
+          0.15748556445645792
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 279157.8351416566,
+        "solve_time": 0.36060595512390137,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.17336130928284338,
+          0.0,
+          0.1266386907171567
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 275548.36559606344,
+        "solve_time": 7.268345832824707,
+        "iterations": 65,
+        "worst_case_u_p": [
+          0.017925377450448303,
+          -0.11986713103139991,
+          0.15909290286357897
+        ],
+        "worst_case_u_c": [
+          -0.13069212266296784,
+          0.07361772255270983
+        ],
+        "metadata": {
+          "total_inner_iterations": 65
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 36,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.013715028762817383,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288353.8314226785,
+        "solve_time": 0.3934481143951416,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.09592477142080905,
+          0.11106092046302413,
+          -0.13588197148176565
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288177.6140478655,
+        "solve_time": 0.37926793098449707,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.010231909963951236,
+          0.17236045692187796,
+          -0.11740763311417089
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 285845.0410574773,
+        "solve_time": 1.634700059890747,
+        "iterations": 26,
+        "worst_case_u_p": [
+          0.13444422069730927,
+          0.10155188237276894,
+          -0.10775883586806471
+        ],
+        "worst_case_u_c": [
+          0.05731571228184569,
+          -0.13861785283874759
+        ],
+        "metadata": {
+          "total_inner_iterations": 26
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 37,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.011265039443969727,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315547.4871199212,
+        "solve_time": 0.38886094093322754,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          -0.031686403575925275,
+          0.06831359642407472
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 315502.20685749303,
+        "solve_time": 0.3929760456085205,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.001006466173612268,
+          0.03159804240136088,
+          0.11739549142502687
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 314861.9285186215,
+        "solve_time": 0.0654001235961914,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1000000000003638
+        ],
+        "worst_case_u_c": [
+          0.049999999999272404,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 38,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.014078140258789062,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 278555.8104246373,
+        "solve_time": 0.39046192169189453,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.001632576052157133,
+          -0.09836742394784287,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 278547.88833080453,
+        "solve_time": 0.3759958744049072,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.08668065464142169,
+          0.0,
+          0.06331934535857835
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 277469.2737449687,
+        "solve_time": 6.675432920455933,
+        "iterations": 61,
+        "worst_case_u_p": [
+          0.0,
+          -0.008211014645539833,
+          0.09178898535446012
+        ],
+        "worst_case_u_c": [
+          -0.049999999999272404,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 61
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 39,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.013692140579223633,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288952.44520812185,
+        "solve_time": 0.40195512771606445,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0808915174455269,
+          -0.002968369633608251,
+          -0.01614011292086485
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288745.2681261548,
+        "solve_time": 0.3866100311279297,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.15000000000000002,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": false,
+        "objective": 288185.4508845496,
+        "solve_time": 18.331856966018677,
+        "iterations": 100,
+        "worst_case_u_p": [
+          0.08675442166824154,
+          0.0,
+          -0.013245578331758406
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.049999999999272404
+        ],
+        "metadata": {
+          "total_inner_iterations": 100
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 40,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.013387918472290039,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315303.514245195,
+        "solve_time": 0.40195393562316895,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          -0.04752960536388792,
+          0.10247039463611209
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 315243.453924255,
+        "solve_time": 0.3875858783721924,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1377689186216633,
+          -0.016569232611782926,
+          0.07066184876655376
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 313966.96093056904,
+        "solve_time": 0.06740379333496094,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1499999999996362
+        ],
+        "worst_case_u_c": [
+          0.1000000000003638,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 41,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.013898134231567383,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 278870.804373265,
+        "solve_time": 0.38590431213378906,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.002448864078235694,
+          -0.1475511359217643,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 278855.9839553619,
+        "solve_time": 0.36687302589416504,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.13002098196213246,
+          0.0,
+          0.09497901803786749
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 276733.9475865145,
+        "solve_time": 6.629762887954712,
+        "iterations": 63,
+        "worst_case_u_p": [
+          0.0,
+          -0.031441997679026154,
+          0.11855800232097384
+        ],
+        "worst_case_u_c": [
+          -0.1000000000003638,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 63
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 42,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.014739751815795898,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288768.5801436756,
+        "solve_time": 0.3963429927825928,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.034849328998360164,
+          0.047336651956759755,
+          -0.0678140190448801
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288492.2530879183,
+        "solve_time": 0.3971099853515625,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.00767393247296342,
+          0.1292703426914084,
+          -0.08805572483562812
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 287277.5156076156,
+        "solve_time": 13.836557149887085,
+        "iterations": 89,
+        "worst_case_u_p": [
+          0.10990401025574109,
+          0.0,
+          -0.0400959897442589
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.1000000000003638
+        ],
+        "metadata": {
+          "total_inner_iterations": 89
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 43,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.01288604736328125,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315075.5658054731,
+        "solve_time": 0.3940160274505615,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          -0.06337280715185055,
+          0.13662719284814945
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 314959.8320545297,
+        "solve_time": 0.3839869499206543,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1836918914955511,
+          -0.02209231014904388,
+          0.09421579835540501
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 313081.4480908939,
+        "solve_time": 0.06786513328552246,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.1999999999998181
+        ],
+        "worst_case_u_c": [
+          0.1499999999996362,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 44,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.014352798461914062,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 279181.4993165537,
+        "solve_time": 0.38619279861450195,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.003265152104314266,
+          -0.19673484789568574,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 279157.8351416566,
+        "solve_time": 0.3559548854827881,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.17336130928284338,
+          0.0,
+          0.1266386907171567
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 275999.45762853185,
+        "solve_time": 6.18109393119812,
+        "iterations": 60,
+        "worst_case_u_p": [
+          0.0,
+          -0.05478463456270259,
+          0.1452153654372974
+        ],
+        "worst_case_u_c": [
+          -0.1499999999996362,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 60
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 45,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.01524806022644043,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288573.57902129425,
+        "solve_time": 0.39983296394348145,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.04646577199781354,
+          0.06311553594234635,
+          -0.0904186920598401
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 288177.6140478655,
+        "solve_time": 0.38204312324523926,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.010231909963951236,
+          0.17236045692187796,
+          -0.11740763311417089
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": false,
+        "objective": 286376.88382934686,
+        "solve_time": 21.943858861923218,
+        "iterations": 100,
+        "worst_case_u_p": [
+          0.1284524479726806,
+          0.00790215658386692,
+          -0.06364539544345238
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.1499999999996362
+        ],
+        "metadata": {
+          "total_inner_iterations": 100
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 46,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.01319122314453125,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315370.4905642476,
+        "solve_time": 0.3999519348144531,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.02040817302851087,
+          -0.05589129169562313,
+          0.09251848454377258
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 313869.75205170276,
+        "solve_time": 0.0689241886138916,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          -0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.05,
+          -0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 47,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.013273954391479492,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 278628.37820568687,
+        "solve_time": 0.38849496841430664,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.04956197025116526,
+          -0.04627197794869725,
+          0.08661706044769156
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 276850.51609173964,
+        "solve_time": 6.913319826126099,
+        "iterations": 63,
+        "worst_case_u_p": [
+          0.07513748395263717,
+          -0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          -0.05,
+          0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 63
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 48,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.011128902435302734,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288725.92222206946,
+        "solve_time": 0.39661288261413574,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.05275862427541239,
+          0.0610835062476788,
+          -0.07473508430642567
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 287356.7593272426,
+        "solve_time": 0.06683516502380371,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.1,
+          0.1,
+          -0.1
+        ],
+        "worst_case_u_c": [
+          0.05,
+          -0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 49,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.013500213623046875,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 315060.35497742036,
+        "solve_time": 0.3935506343841553,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0306122595427663,
+          -0.0838369375434347,
+          0.13877772681565886
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 312286.95784062764,
+        "solve_time": 9.657306909561157,
+        "iterations": 68,
+        "worst_case_u_p": [
+          -0.08836131296686645,
+          -0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.1,
+          -0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 68
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 50,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.014333963394165039,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 279126.64279302664,
+        "solve_time": 0.38463902473449707,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.07434295537674789,
+          -0.06940796692304588,
+          0.12992559067153733
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 275692.58532721305,
+        "solve_time": 9.135451078414917,
+        "iterations": 71,
+        "worst_case_u_p": [
+          0.058566925988730284,
+          -0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          -0.1,
+          0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 71
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 51,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.012790918350219727,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288487.8991905795,
+        "solve_time": 0.3960449695587158,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.07913793641311859,
+          0.09162525937151818,
+          -0.11210262645963852
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 285959.65841188526,
+        "solve_time": 0.06742382049560547,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.15,
+          0.15,
+          -0.15
+        ],
+        "worst_case_u_c": [
+          0.1,
+          -0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 52,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 316086.76994717936,
+        "solve_time": 0.01089620590209961,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 314781.80642985005,
+        "solve_time": 0.3885629177093506,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.04081634605702174,
+          -0.11178258339124626,
+          0.18503696908754516
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 310724.7640469391,
+        "solve_time": 11.069654941558838,
+        "iterations": 71,
+        "worst_case_u_p": [
+          -0.06584251476618977,
+          -0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.15,
+          -0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 71
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 53,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 278389.83110754564,
+        "solve_time": 0.014146089553833008,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 279639.08530158945,
+        "solve_time": 0.36600279808044434,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.09912394050233052,
+          -0.0925439558973945,
+          0.17323412089538312
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 274551.91732722137,
+        "solve_time": 5.2167980670928955,
+        "iterations": 59,
+        "worst_case_u_p": [
+          0.039891950444013335,
+          -0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          -0.15,
+          0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 59
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 54,
+    "problem_config": {
+      "n_agents": 10,
+      "avg_vars_per_agent": 10,
+      "n_resources": 3,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 289303.08320100803,
+        "solve_time": 0.015065908432006836,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 288282.85294393677,
+        "solve_time": 0.41103100776672363,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.10551724855082478,
+          0.1221670124953576,
+          -0.14947016861285134
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 284631.9935614463,
+        "solve_time": 0.06813812255859375,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.2,
+          0.2,
+          -0.2
+        ],
+        "worst_case_u_c": [
+          0.15,
+          -0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 55,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.02744889259338379,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 602078.6504478191,
+        "solve_time": 0.6735579967498779,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0316005505012674,
+          -0.00420326058137128,
+          0.09478258177799305
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 602038.270122294,
+        "solve_time": 0.7301971912384033,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.10743995968762171,
+          0.0,
+          0.042560040312378325
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 600314.3102234667,
+        "solve_time": 0.395658016204834,
+        "iterations": 5,
+        "worst_case_u_p": [
+          -0.05556578289219706,
+          -0.04265821419137521,
+          0.07136329962648852
+        ],
+        "worst_case_u_c": [
+          0.04286026874470302,
+          0.02574873517537966
+        ],
+        "metadata": {
+          "total_inner_iterations": 5
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 56,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.025497913360595703,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 597179.0812379589,
+        "solve_time": 0.633709192276001,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.06892558260549188,
+          0.03331907109058504,
+          -0.06433586530197645
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 597215.8785923693,
+        "solve_time": 0.6180858612060547,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.08677342334746486,
+          0.06322657665253516,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 596093.5598343511,
+        "solve_time": 0.2609410285949707,
+        "iterations": 4,
+        "worst_case_u_p": [
+          -0.08616837247484839,
+          0.023677144327540266,
+          -0.04488211694571255
+        ],
+        "worst_case_u_c": [
+          -0.015246122364215296,
+          0.04761885921413253
+        ],
+        "metadata": {
+          "total_inner_iterations": 4
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 57,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.026183128356933594,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580731.1653388594,
+        "solve_time": 0.6163809299468994,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0007683672739964952,
+          0.0648746963476936,
+          0.076096539905089
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 580340.3464254027,
+        "solve_time": 0.6195712089538574,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.003154376465586063,
+          0.14684562353441397,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 580019.5405096819,
+        "solve_time": 0.4357168674468994,
+        "iterations": 6,
+        "worst_case_u_p": [
+          -0.02816648469837501,
+          0.09306772466798102,
+          0.023346258048370067
+        ],
+        "worst_case_u_c": [
+          -0.01688058871357453,
+          -0.047064272274020554
+        ],
+        "metadata": {
+          "total_inner_iterations": 6
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 58,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.02856302261352539,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601734.637233715,
+        "solve_time": 0.6970860958099365,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0474008257519011,
+          -0.00630489087205692,
+          0.14217387266698955
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 601660.0440636645,
+        "solve_time": 0.6612820625305176,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1611599395314325,
+          0.0,
+          0.06384006046856747
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 598250.0140833129,
+        "solve_time": 0.5570828914642334,
+        "iterations": 7,
+        "worst_case_u_p": [
+          -0.08393739007535973,
+          -0.06388353768564169,
+          0.10664618211686765
+        ],
+        "worst_case_u_c": [
+          0.08591148584518779,
+          0.05117828250217171
+        ],
+        "metadata": {
+          "total_inner_iterations": 7
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 59,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.025519132614135742,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 596373.7974652513,
+        "solve_time": 0.6264638900756836,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.10338837390823781,
+          0.04997860663587753,
+          -0.09650379795296465
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 596401.5801059365,
+        "solve_time": 0.6236248016357422,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.13016013502119725,
+          0.0948398649788027,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 594263.0807194933,
+        "solve_time": 0.3435962200164795,
+        "iterations": 5,
+        "worst_case_u_p": [
+          -0.1290497509400898,
+          0.03376750942692223,
+          -0.06859968723983742
+        ],
+        "worst_case_u_c": [
+          -0.03299051101199979,
+          0.09440140985794186
+        ],
+        "metadata": {
+          "total_inner_iterations": 5
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 60,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.02238011360168457,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580373.4707450562,
+        "solve_time": 0.6616950035095215,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.001152550910994743,
+          0.09731204452154042,
+          0.11414480985763348
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 579940.1470882896,
+        "solve_time": 0.6333568096160889,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0047315646983790705,
+          0.2202684353016209,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 579046.0578024784,
+        "solve_time": 0.643909215927124,
+        "iterations": 9,
+        "worst_case_u_p": [
+          -0.04300012882981802,
+          0.13867715642900844,
+          0.03767804672993775
+        ],
+        "worst_case_u_c": [
+          -0.03740589481271856,
+          -0.09274049295350892
+        ],
+        "metadata": {
+          "total_inner_iterations": 9
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 61,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.05383920669555664,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601457.5248443298,
+        "solve_time": 0.6685690879821777,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0632011010025348,
+          -0.00840652116274256,
+          0.1895651635559861
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 601320.241892068,
+        "solve_time": 0.7597687244415283,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.018326387277828496,
+          -0.2169855681121856,
+          0.06468804460998595
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 596219.4413607174,
+        "solve_time": 1.4691271781921387,
+        "iterations": 13,
+        "worst_case_u_p": [
+          -0.11262250749131425,
+          -0.08505081022749489,
+          0.1417128451694324
+        ],
+        "worst_case_u_c": [
+          0.12915063937914656,
+          0.0762896608195215
+        ],
+        "metadata": {
+          "total_inner_iterations": 13
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 62,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.02263498306274414,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 595564.6842473829,
+        "solve_time": 0.6102731227874756,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.13785116521098376,
+          0.06663814218117008,
+          -0.1286717306039529
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 595594.2516000302,
+        "solve_time": 0.6129260063171387,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0835901926770219,
+          0.031122340520624195,
+          -0.18528746680235397
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 592433.2479706183,
+        "solve_time": 0.3961033821105957,
+        "iterations": 6,
+        "worst_case_u_p": [
+          -0.17173939062015595,
+          0.042800759294674036,
+          -0.09313257600440816
+        ],
+        "worst_case_u_c": [
+          -0.0529223113562376,
+          0.14035394173557594
+        ],
+        "metadata": {
+          "total_inner_iterations": 6
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 63,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L2Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.022790908813476562,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580024.4068370233,
+        "solve_time": 0.6337511539459229,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0015367345479929905,
+          0.1297493926953872,
+          0.152193079810178
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 579635.6974853366,
+        "solve_time": 0.6247601509094238,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          0.26049086809156174,
+          0.039509131908438286
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 578078.6229333724,
+        "solve_time": 2.577538251876831,
+        "iterations": 21,
+        "worst_case_u_p": [
+          -0.05810477886630169,
+          0.18363650993753247,
+          0.05386526608920377
+        ],
+        "worst_case_u_c": [
+          -0.060969256335286874,
+          -0.13705017249869508
+        ],
+        "metadata": {
+          "total_inner_iterations": 21
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 64,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.025974035263061523,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 602253.7688029014,
+        "solve_time": 0.7566449642181396,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.008948072337528049,
+          0.0,
+          0.09105192766247196
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 602038.270122294,
+        "solve_time": 0.6606810092926025,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.10743995968762171,
+          0.0,
+          0.042560040312378325
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 600859.8339169873,
+        "solve_time": 14.33079719543457,
+        "iterations": 63,
+        "worst_case_u_p": [
+          -0.00862359008000918,
+          0.0,
+          0.09137640991999085
+        ],
+        "worst_case_u_c": [
+          0.049999999999272404,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 63
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 65,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.024610042572021484,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 597521.7855442386,
+        "solve_time": 0.6865310668945312,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.08820265977441927,
+          0.009985611874984323,
+          0.0018117283505964359
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 597215.8785923693,
+        "solve_time": 0.6561400890350342,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.08677342334746486,
+          0.06322657665253516,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 596484.7190830745,
+        "solve_time": 0.10878491401672363,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.09999999999854481,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.049999999999272404
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 66,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.021034955978393555,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580952.3293895025,
+        "solve_time": 0.6585400104522705,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.05661347133522128,
+          0.03899712301036855,
+          0.004389405654410199
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 580340.3464254027,
+        "solve_time": 0.6361308097839355,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.003154376465586063,
+          0.14684562353441397,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 580120.2327002584,
+        "solve_time": 0.12308502197265625,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.1000000000003638,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.049999999999272404
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 67,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.02716994285583496,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601974.8216862143,
+        "solve_time": 0.7038509845733643,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.02287482419979956,
+          0.0,
+          0.12712517580020044
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 601660.0440636645,
+        "solve_time": 0.7608010768890381,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1611599395314325,
+          0.0,
+          0.06384006046856747
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 599137.2796908033,
+        "solve_time": 13.77751088142395,
+        "iterations": 64,
+        "worst_case_u_p": [
+          -0.034160477768660366,
+          0.0,
+          0.11583952223133963
+        ],
+        "worst_case_u_c": [
+          0.09999999999854481,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 64
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 68,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.024437904357910156,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 596840.1648897618,
+        "solve_time": 0.6254329681396484,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.1323039896616289,
+          0.014978417812476472,
+          0.0027175925258946347
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 596401.5801059365,
+        "solve_time": 0.6244609355926514,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.13016013502119725,
+          0.0948398649788027,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 594876.5612844706,
+        "solve_time": 0.10224795341491699,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1500000000014552,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.1000000000003638
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 69,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.021641016006469727,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580696.2912973759,
+        "solve_time": 0.619736909866333,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0849202070028319,
+          0.058495684515552794,
+          0.0065841084816152876
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 579940.1470882896,
+        "solve_time": 0.6996750831604004,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0047315646983790705,
+          0.2202684353016209,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 579238.5514799479,
+        "solve_time": 0.10082197189331055,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.1499999999996362,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.1000000000003638
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 70,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.025259017944335938,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601680.9330855121,
+        "solve_time": 0.6839821338653564,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          -0.1801030723878324,
+          -0.019896927612167582
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 601320.241892068,
+        "solve_time": 0.6648368835449219,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.018326387277828496,
+          -0.2169855681121856,
+          0.06468804460998595
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 597403.4997467697,
+        "solve_time": 19.99799418449402,
+        "iterations": 75,
+        "worst_case_u_p": [
+          -0.05745069397880473,
+          -0.0037178067684240923,
+          0.13883149925277116
+        ],
+        "worst_case_u_c": [
+          0.1500000000014552,
+          0.0
+        ],
+        "metadata": {
+          "total_inner_iterations": 75
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 71,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.020431995391845703,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 596171.3085778138,
+        "solve_time": 0.618297815322876,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.17640531954883854,
+          0.019971223749968646,
+          0.0036234567011928717
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 595594.2516000302,
+        "solve_time": 0.6029961109161377,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0835901926770219,
+          0.031122340520624195,
+          -0.18528746680235397
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 593280.827798277,
+        "solve_time": 0.0962839126586914,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.2000000000007276,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.1499999999996362
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 72,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "L1Ball",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.02143383026123047,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580443.5474725978,
+        "solve_time": 0.6100420951843262,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.11322694267044256,
+          0.0779942460207371,
+          0.008778811308820397
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": true,
+        "objective": 579635.6974853366,
+        "solve_time": 0.6212852001190186,
+        "iterations": 20,
+        "worst_case_u_p": [
+          0.0,
+          0.26049086809156174,
+          0.039509131908438286
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "vertices",
+          "budget_p": 1.5,
+          "budget_c": 1.0
+        }
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 578389.8232168092,
+        "solve_time": 0.09895205497741699,
+        "iterations": 2,
+        "worst_case_u_p": [
+          0.0,
+          0.2000000000007276,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          -0.1499999999996362
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 73,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.025740861892700195,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 602028.6947512235,
+        "solve_time": 0.6664159297943115,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.034760605549328034,
+          -0.00462358663923359,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 599126.37622052,
+        "solve_time": 0.11140608787536621,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          -0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          0.05,
+          0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 74,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.02486419677734375,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 596980.39986309,
+        "solve_time": 0.6329920291900635,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.07581814086187118,
+          0.03665097819762779,
+          -0.07076945182828187
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 594670.3929168796,
+        "solve_time": 0.10190224647521973,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          0.1,
+          -0.1
+        ],
+        "worst_case_u_c": [
+          -0.05,
+          0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 75,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.1,
+      "uncertainty_radius_c": 0.05,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.1,
+      "radius_c": 0.05
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.02141594886779785,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580658.9050963038,
+        "solve_time": 0.6375348567962646,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.000845204001347196,
+          0.07136216597833014,
+          0.08370619389075018
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 579598.2667194759,
+        "solve_time": 0.09559988975524902,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.1,
+          0.1,
+          0.1
+        ],
+        "worst_case_u_c": [
+          -0.05,
+          -0.05
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 76,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.02541494369506836,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601671.6628076491,
+        "solve_time": 0.7074859142303467,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.05214090832399205,
+          -0.0069353799588503864,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 596306.7823773487,
+        "solve_time": 0.11138796806335449,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.15,
+          -0.15,
+          0.15
+        ],
+        "worst_case_u_c": [
+          0.1,
+          0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 77,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.024786949157714844,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 596098.7237336774,
+        "solve_time": 0.6103038787841797,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.11372721129280676,
+          0.05497646729644167,
+          -0.10615417774242279
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 592151.5039307908,
+        "solve_time": 0.10323119163513184,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.15,
+          0.15,
+          -0.15
+        ],
+        "worst_case_u_c": [
+          -0.1,
+          0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 78,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.15,
+      "uncertainty_radius_c": 0.1,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.15,
+      "radius_c": 0.1
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.023276090621948242,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 580267.8853264092,
+        "solve_time": 0.6092438697814941,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.0012678060020207941,
+          0.10704324896749522,
+          0.12555929083612524
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 578379.1276363812,
+        "solve_time": 10.483558893203735,
+        "iterations": 63,
+        "worst_case_u_p": [
+          -0.13749882835295912,
+          0.15,
+          0.14207142302705877
+        ],
+        "worst_case_u_c": [
+          -0.1,
+          -0.1
+        ],
+        "metadata": {
+          "total_inner_iterations": 63
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 79,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 42,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 0,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 602958.9025536233,
+        "solve_time": 0.031068086624145508,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 601389.7455431393,
+        "solve_time": 0.6984310150146484,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.06952121109865607,
+          -0.00924717327846718,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 593608.1029765971,
+        "solve_time": 0.1127622127532959,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.2,
+          -0.2,
+          0.2
+        ],
+        "worst_case_u_c": [
+          0.15,
+          0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 80,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 43,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 1,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 599233.0283303885,
+        "solve_time": 0.025454044342041016,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 595213.8951172745,
+        "solve_time": 0.605767011642456,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.15163628172374236,
+          0.07330195639525558,
+          -0.14153890365656374
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 589694.2940789275,
+        "solve_time": 0.10522603988647461,
+        "iterations": 2,
+        "worst_case_u_p": [
+          -0.2,
+          0.2,
+          -0.2
+        ],
+        "worst_case_u_c": [
+          -0.15,
+          0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 2
+        }
+      }
+    }
+  },
+  {
+    "experiment_id": 81,
+    "problem_config": {
+      "n_agents": 20,
+      "avg_vars_per_agent": 10,
+      "n_resources": 5,
+      "n_factors_p": 3,
+      "n_factors_c": 2,
+      "uncertainty_radius_p": 0.2,
+      "uncertainty_radius_c": 0.15,
+      "seed": 44,
+      "problem_type": "energy"
+    },
+    "uncertainty_config": {
+      "set_type": "LinfBox",
+      "radius_p": 0.2,
+      "radius_c": 0.15
+    },
+    "replication": 2,
+    "results": {
+      "nominal": {
+        "converged": true,
+        "objective": 581474.2327936519,
+        "solve_time": 0.022602319717407227,
+        "iterations": 1,
+        "worst_case_u_p": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "status": "optimal"
+        }
+      },
+      "scenario": {
+        "converged": true,
+        "objective": 579886.946380473,
+        "solve_time": 0.6239349842071533,
+        "iterations": 20,
+        "worst_case_u_p": [
+          -0.001690408002694392,
+          0.1427243319566603,
+          0.16741238778150036
+        ],
+        "worst_case_u_c": [
+          0.0,
+          0.0
+        ],
+        "metadata": {
+          "n_scenarios_p": 11,
+          "n_scenarios_c": 11,
+          "n_total_scenarios": 121,
+          "scenario_generation": "grid"
+        }
+      },
+      "budgeted": {
+        "converged": false,
+        "objective": Infinity,
+        "solve_time": 0.0,
+        "iterations": 0,
+        "error": "only length-1 arrays can be converted to Python scalars"
+      },
+      "drpg": {
+        "converged": true,
+        "objective": 577126.9186832954,
+        "solve_time": 10.179154872894287,
+        "iterations": 62,
+        "worst_case_u_p": [
+          -0.14070903093855272,
+          0.2,
+          0.14926754333184736
+        ],
+        "worst_case_u_c": [
+          -0.15,
+          -0.15
+        ],
+        "metadata": {
+          "total_inner_iterations": 62
+        }
+      }
+    }
+  }
+]

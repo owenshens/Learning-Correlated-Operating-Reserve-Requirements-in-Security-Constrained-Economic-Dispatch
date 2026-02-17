@@ -1,0 +1,86 @@
+{
+  "case30": {
+    "ieee": {
+      "name": "IEEE-case30",
+      "n_agents": 5,
+      "n_vars_total": 5,
+      "n_resources": 1,
+      "cost_linear_mean": -34.0,
+      "cost_linear_std": 7.3484692283495345,
+      "cost_quadratic_max_eig": 0.04,
+      "constraint_frobenius_mean": 1.0,
+      "rhs_norm": 189.2,
+      "uncertainty_P_mean": 1.4530588220699983,
+      "uncertainty_B_norm": 0.9999999999999999
+    },
+    "synthetic": {
+      "name": "Synthetic",
+      "n_agents": 5,
+      "n_vars_total": 25,
+      "n_resources": 1,
+      "cost_linear_mean": 52.48975672428563,
+      "cost_linear_std": 23.803453306972976,
+      "cost_quadratic_max_eig": 0.957764662321557,
+      "constraint_frobenius_mean": 1.54147060592639,
+      "rhs_norm": 444.97364263622984,
+      "uncertainty_P_mean": 0.6779263032961034,
+      "uncertainty_B_norm": 0.048304591765844014
+    }
+  },
+  "case57": {
+    "ieee": {
+      "name": "IEEE-case57",
+      "n_agents": 6,
+      "n_vars_total": 6,
+      "n_resources": 1,
+      "cost_linear_mean": -21.666666666666668,
+      "cost_linear_std": 4.714045207910316,
+      "cost_quadratic_max_eig": 0.02,
+      "constraint_frobenius_mean": 1.0,
+      "rhs_norm": 1250.8,
+      "uncertainty_P_mean": 1.5321617241872278,
+      "uncertainty_B_norm": 0.9999999999999999
+    },
+    "synthetic": {
+      "name": "Synthetic",
+      "n_agents": 6,
+      "n_vars_total": 30,
+      "n_resources": 1,
+      "cost_linear_mean": 56.22575666002555,
+      "cost_linear_std": 21.885586666613985,
+      "cost_quadratic_max_eig": 0.9183883618709043,
+      "constraint_frobenius_mean": 1.1607542104636734,
+      "rhs_norm": 379.2061093186953,
+      "uncertainty_P_mean": 0.7757959182324142,
+      "uncertainty_B_norm": 0.1583626081101129
+    }
+  },
+  "case118": {
+    "ieee": {
+      "name": "IEEE-case118",
+      "n_agents": 53,
+      "n_vars_total": 53,
+      "n_resources": 1,
+      "cost_linear_mean": -22.92452830188679,
+      "cost_linear_std": 4.055506652868806,
+      "cost_quadratic_max_eig": 0.02,
+      "constraint_frobenius_mean": 1.0,
+      "rhs_norm": 4242.0,
+      "uncertainty_P_mean": 1.584052020279547,
+      "uncertainty_B_norm": 0.9999999999999999
+    },
+    "synthetic": {
+      "name": "Synthetic",
+      "n_agents": 53,
+      "n_vars_total": 265,
+      "n_resources": 1,
+      "cost_linear_mean": 58.683809722456516,
+      "cost_linear_std": 23.490020853135537,
+      "cost_quadratic_max_eig": 0.9929199847066044,
+      "constraint_frobenius_mean": 1.3569454845742834,
+      "rhs_norm": 4100.846057807963,
+      "uncertainty_P_mean": 0.7787854895995842,
+      "uncertainty_B_norm": 0.04779485386664448
+    }
+  }
+}

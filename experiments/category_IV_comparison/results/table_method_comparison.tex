@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Method Comparison: Performance Metrics}
+\label{tab:method_comparison}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Method} & \textbf{Obj. (worst-case)} & \textbf{Time (s)} & \textbf{Iterations} & \textbf{Success \%} \\
+\midrule
+Nominal (u=0)        & $-348589 \pm 183179$ & 0.015 $\pm$ 0.009 & 1.0 & 100.0 \\
+Scenario-Based       & $-347454 \pm 182942$ & 0.402 $\pm$ 0.202 & 20.0 & 100.0 \\
+Bertsimas-Sim        & $-347221 \pm 183003$ & 0.400 $\pm$ 0.205 & 20.0 & 66.7 \\
+DRPG (Ours)          & $-346914 \pm 184389$ & 2.095 $\pm$ 4.242 & 15.9 & 97.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Note: Objective values shown as maximization (negate for minimization).
+% All results averaged across problem sizes, uncertainty sets, and radii.
