@@ -1,8 +1,8 @@
-import { StageRenderer } from './runtime/stageRenderer.js?v=20260321t';
-import { PresentationController } from './presentation/presentationController.js?v=20260321t';
-import { buildSlides } from './presentation/slideManifest.js?v=20260321t';
-import { renderKatexBlocks } from './presentation/mathRenderer.js?v=20260321t';
-import { attachFigureSlots, destroyFigureSlots } from './presentation/figureSlotRenderers.js?v=20260321t';
+import { StageRenderer } from './runtime/stageRenderer.js?v=20260321u';
+import { PresentationController } from './presentation/presentationController.js?v=20260321u';
+import { buildSlides } from './presentation/slideManifest.js?v=20260321u';
+import { renderKatexBlocks } from './presentation/mathRenderer.js?v=20260321u';
+import { attachFigureSlots, destroyFigureSlots } from './presentation/figureSlotRenderers.js?v=20260321u';
 
 function loadJson(path) {
   return fetch(path).then((response) => {

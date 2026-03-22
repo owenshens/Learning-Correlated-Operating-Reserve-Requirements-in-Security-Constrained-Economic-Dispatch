@@ -11,7 +11,7 @@ Experiment/Experiment Design.md
 
 # Not part of the paper-facing public release
 GradientDemo/
-Presentation/
+/Presentation/
 VisualizationBlueprint/
 Paper/*
 !Paper/reference.bib
