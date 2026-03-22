@@ -1,0 +1,1073 @@
+{
+  "tau_target": 0.95,
+  "cases": [
+    {
+      "label": "low",
+      "context": {
+        "load": -1.2055643667819875,
+        "solar": -0.7264028495757103,
+        "wind": -0.5999251888804171,
+        "hour": 23,
+        "month": 11
+      },
+      "L_2d": [
+        [
+          0.28712563657244317,
+          0.0
+        ],
+        [
+          0.0035836312309576895,
+          0.5882819138224217
+        ]
+      ],
+      "rho": 368.4934728104191,
+      "coverage": 0.984375,
+      "cost": 95918.31939346978,
+      "energy_cost": 90606.4312287141,
+      "reserve_cost": 5311.888164755681,
+      "reserves_per_zone": [
+        46.05773162188586,
+        43.029278035789254,
+        59.82644527372871,
+        65.64290523089677,
+        105.80389852759212,
+        29.3239269327409,
+        216.78206671583953,
+        170.78656734308748,
+        134.68382464358743,
+        152.7991928705027
+      ],
+      "mu_z": [
+        7.470000000000001,
+        5.050000000000002,
+        4.54,
+        4.84,
+        9.860000000000003,
+        5.0,
+        8.15,
+        5.05,
+        3.8300000000000036,
+        8.140000000000004
+      ],
+      "lambda_z": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "combined_duals": [
+        7.470000000000001,
+        5.050000000000002,
+        4.54,
+        4.84,
+        9.860000000000003,
+        5.0,
+        8.15,
+        5.05,
+        3.8300000000000036,
+        8.140000000000004
+      ],
+      "support_points_2d": [
+        {
+          "zone": 1,
+          "x": -3.6656641793252103,
+          "y": -10.971941791023797,
+          "support": 46.05773162188586
+        },
+        {
+          "zone": 2,
+          "x": -3.6656641793252107,
+          "y": -10.971941791023797,
+          "support": 43.029278035789254
+        },
+        {
+          "zone": 3,
+          "x": 2.599770167905689,
+          "y": 9.044696092911916,
+          "support": 59.82644527372871
+        },
+        {
+          "zone": 4,
+          "x": 2.5997701679056906,
+          "y": 9.044696092911925,
+          "support": 65.64290523089677
+        },
+        {
+          "zone": 5,
+          "x": 105.80394609598939,
+          "y": 1.3205450224284423,
+          "support": 105.80389852759212
+        },
+        {
+          "zone": 6,
+          "x": 105.80394609598919,
+          "y": 1.320545022428446,
+          "support": 29.3239269327409
+        },
+        {
+          "zone": 7,
+          "x": 0.6445127757605595,
+          "y": 216.78206776457623,
+          "support": 216.78206671583953
+        },
+        {
+          "zone": 8,
+          "x": 0.644512775760564,
+          "y": 216.78206776457628,
+          "support": 170.78656734308748
+        },
+        {
+          "zone": 9,
+          "x": -2.700734941431839,
+          "y": 19.5561321924606,
+          "support": 134.68382464358743
+        },
+        {
+          "zone": 10,
+          "x": -2.700734941431842,
+          "y": 19.5561321924606,
+          "support": 152.7991928705027
+        }
+      ],
+      "zone_contributions": [
+        {
+          "zone": 1,
+          "label": "Zone 1",
+          "mu": 7.470000000000001,
+          "lambda": 0.0,
+          "combined_dual": 7.470000000000001,
+          "support": 46.05773162188586,
+          "shape_contribution_norm": 1423.1103091944026,
+          "size_contribution": 0.9336698764064495,
+          "total_contribution": 1424.043979070809
+        },
+        {
+          "zone": 2,
+          "label": "Zone 2",
+          "mu": 5.050000000000002,
+          "lambda": 0.0,
+          "combined_dual": 5.050000000000002,
+          "support": 43.029278035789254,
+          "shape_contribution_norm": 898.8161258543661,
+          "size_contribution": 0.5896925457687285,
+          "total_contribution": 899.4058184001348
+        },
+        {
+          "zone": 3,
+          "label": "Zone 3",
+          "mu": 4.54,
+          "lambda": 0.0,
+          "combined_dual": 4.54,
+          "support": 59.82644527372871,
+          "shape_contribution_norm": 1128.1223394599986,
+          "size_contribution": 0.7370878498096657,
+          "total_contribution": 1128.8594273098083
+        },
+        {
+          "zone": 4,
+          "label": "Zone 4",
+          "mu": 4.84,
+          "lambda": 0.0,
+          "combined_dual": 4.84,
+          "support": 65.64290523089677,
+          "shape_contribution_norm": 1319.5939112699616,
+          "size_contribution": 0.8621907435548939,
+          "total_contribution": 1320.4561020135166
+        },
+        {
+          "zone": 5,
+          "label": "Zone 5",
+          "mu": 9.860000000000003,
+          "lambda": 0.0,
+          "combined_dual": 9.860000000000003,
+          "support": 105.80389852759212,
+          "shape_contribution_norm": 4023.2645880225327,
+          "size_contribution": 2.831058123026166,
+          "total_contribution": 4026.095646145559
+        },
+        {
+          "zone": 6,
+          "label": "Zone 6",
+          "mu": 5.0,
+          "lambda": 0.0,
+          "combined_dual": 5.0,
+          "support": 29.3239269327409,
+          "shape_contribution_norm": 565.4473101200842,
+          "size_contribution": 0.39788936706386846,
+          "total_contribution": 565.8451994871481
+        },
+        {
+          "zone": 7,
+          "label": "Zone 7",
+          "mu": 8.15,
+          "lambda": 0.0,
+          "combined_dual": 8.15,
+          "support": 216.78206671583953,
+          "shape_contribution_norm": 2375.6208929806858,
+          "size_contribution": 4.794586537067522,
+          "total_contribution": 2380.4154795177533
+        },
+        {
+          "zone": 8,
+          "label": "Zone 8",
+          "mu": 5.05,
+          "lambda": 0.0,
+          "combined_dual": 5.05,
+          "support": 170.78656734308748,
+          "shape_contribution_norm": 1159.6882658473758,
+          "size_contribution": 2.3405357997380665,
+          "total_contribution": 1162.0288016471138
+        },
+        {
+          "zone": 9,
+          "label": "Zone 9",
+          "mu": 3.8300000000000036,
+          "lambda": 0.0,
+          "combined_dual": 3.8300000000000036,
+          "support": 134.68382464358743,
+          "shape_contribution_norm": 935.0757995155792,
+          "size_contribution": 1.3998593908617938,
+          "total_contribution": 936.475658906441
+        },
+        {
+          "zone": 10,
+          "label": "Zone 10",
+          "mu": 8.140000000000004,
+          "lambda": 0.0,
+          "combined_dual": 8.140000000000004,
+          "support": 152.7991928705027,
+          "shape_contribution_norm": 2254.6444651535608,
+          "size_contribution": 3.375325539635243,
+          "total_contribution": 2258.0197906931962
+        }
+      ],
+      "dominant_zone": 5,
+      "dominant_zones": [
+        5,
+        7,
+        10
+      ],
+      "semi_a": 216.78332522014622,
+      "semi_b": 105.80134607635243,
+      "angle": 1.5668936453750586,
+      "nn_backprop_summary": {
+        "batch_size": 8,
+        "rho_hat": 368.4934728104191,
+        "avg_grad_norm": 8425.57156234317,
+        "dominant_zones": [
+          5,
+          7,
+          10
+        ],
+        "sample_summaries": [
+          {
+            "sample_index": 3647,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3119,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3118,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3096,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3360,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3646,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3526,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 3024,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          }
+        ]
+      }
+    },
+    {
+      "label": "nominal",
+      "context": {
+        "load": 0.07830356571533996,
+        "solar": -0.23665734905774047,
+        "wind": 0.06042554206497314,
+        "hour": 16,
+        "month": 12
+      },
+      "L_2d": [
+        [
+          0.28712563657244317,
+          0.0
+        ],
+        [
+          0.0035836312309576895,
+          0.5882819138224217
+        ]
+      ],
+      "rho": 368.4934728104191,
+      "coverage": 0.9583333333333334,
+      "cost": 95918.31939346978,
+      "energy_cost": 90606.4312287141,
+      "reserve_cost": 5311.888164755681,
+      "reserves_per_zone": [
+        46.05773162188586,
+        43.029278035789254,
+        59.82644527372871,
+        65.64290523089677,
+        105.80389852759212,
+        29.3239269327409,
+        216.78206671583953,
+        170.78656734308748,
+        134.68382464358743,
+        152.7991928705027
+      ],
+      "mu_z": [
+        7.470000000000001,
+        5.050000000000002,
+        4.54,
+        4.84,
+        9.860000000000003,
+        5.0,
+        8.15,
+        5.05,
+        3.8300000000000036,
+        8.140000000000004
+      ],
+      "lambda_z": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "combined_duals": [
+        7.470000000000001,
+        5.050000000000002,
+        4.54,
+        4.84,
+        9.860000000000003,
+        5.0,
+        8.15,
+        5.05,
+        3.8300000000000036,
+        8.140000000000004
+      ],
+      "support_points_2d": [
+        {
+          "zone": 1,
+          "x": -3.6656641793252103,
+          "y": -10.971941791023797,
+          "support": 46.05773162188586
+        },
+        {
+          "zone": 2,
+          "x": -3.6656641793252107,
+          "y": -10.971941791023797,
+          "support": 43.029278035789254
+        },
+        {
+          "zone": 3,
+          "x": 2.599770167905689,
+          "y": 9.044696092911916,
+          "support": 59.82644527372871
+        },
+        {
+          "zone": 4,
+          "x": 2.5997701679056906,
+          "y": 9.044696092911925,
+          "support": 65.64290523089677
+        },
+        {
+          "zone": 5,
+          "x": 105.80394609598939,
+          "y": 1.3205450224284423,
+          "support": 105.80389852759212
+        },
+        {
+          "zone": 6,
+          "x": 105.80394609598919,
+          "y": 1.320545022428446,
+          "support": 29.3239269327409
+        },
+        {
+          "zone": 7,
+          "x": 0.6445127757605595,
+          "y": 216.78206776457623,
+          "support": 216.78206671583953
+        },
+        {
+          "zone": 8,
+          "x": 0.644512775760564,
+          "y": 216.78206776457628,
+          "support": 170.78656734308748
+        },
+        {
+          "zone": 9,
+          "x": -2.700734941431839,
+          "y": 19.5561321924606,
+          "support": 134.68382464358743
+        },
+        {
+          "zone": 10,
+          "x": -2.700734941431842,
+          "y": 19.5561321924606,
+          "support": 152.7991928705027
+        }
+      ],
+      "zone_contributions": [
+        {
+          "zone": 1,
+          "label": "Zone 1",
+          "mu": 7.470000000000001,
+          "lambda": 0.0,
+          "combined_dual": 7.470000000000001,
+          "support": 46.05773162188586,
+          "shape_contribution_norm": 1423.1103091944026,
+          "size_contribution": 0.9336698764064495,
+          "total_contribution": 1424.043979070809
+        },
+        {
+          "zone": 2,
+          "label": "Zone 2",
+          "mu": 5.050000000000002,
+          "lambda": 0.0,
+          "combined_dual": 5.050000000000002,
+          "support": 43.029278035789254,
+          "shape_contribution_norm": 898.8161258543661,
+          "size_contribution": 0.5896925457687285,
+          "total_contribution": 899.4058184001348
+        },
+        {
+          "zone": 3,
+          "label": "Zone 3",
+          "mu": 4.54,
+          "lambda": 0.0,
+          "combined_dual": 4.54,
+          "support": 59.82644527372871,
+          "shape_contribution_norm": 1128.1223394599986,
+          "size_contribution": 0.7370878498096657,
+          "total_contribution": 1128.8594273098083
+        },
+        {
+          "zone": 4,
+          "label": "Zone 4",
+          "mu": 4.84,
+          "lambda": 0.0,
+          "combined_dual": 4.84,
+          "support": 65.64290523089677,
+          "shape_contribution_norm": 1319.5939112699616,
+          "size_contribution": 0.8621907435548939,
+          "total_contribution": 1320.4561020135166
+        },
+        {
+          "zone": 5,
+          "label": "Zone 5",
+          "mu": 9.860000000000003,
+          "lambda": 0.0,
+          "combined_dual": 9.860000000000003,
+          "support": 105.80389852759212,
+          "shape_contribution_norm": 4023.2645880225327,
+          "size_contribution": 2.831058123026166,
+          "total_contribution": 4026.095646145559
+        },
+        {
+          "zone": 6,
+          "label": "Zone 6",
+          "mu": 5.0,
+          "lambda": 0.0,
+          "combined_dual": 5.0,
+          "support": 29.3239269327409,
+          "shape_contribution_norm": 565.4473101200842,
+          "size_contribution": 0.39788936706386846,
+          "total_contribution": 565.8451994871481
+        },
+        {
+          "zone": 7,
+          "label": "Zone 7",
+          "mu": 8.15,
+          "lambda": 0.0,
+          "combined_dual": 8.15,
+          "support": 216.78206671583953,
+          "shape_contribution_norm": 2375.6208929806858,
+          "size_contribution": 4.794586537067522,
+          "total_contribution": 2380.4154795177533
+        },
+        {
+          "zone": 8,
+          "label": "Zone 8",
+          "mu": 5.05,
+          "lambda": 0.0,
+          "combined_dual": 5.05,
+          "support": 170.78656734308748,
+          "shape_contribution_norm": 1159.6882658473758,
+          "size_contribution": 2.3405357997380665,
+          "total_contribution": 1162.0288016471138
+        },
+        {
+          "zone": 9,
+          "label": "Zone 9",
+          "mu": 3.8300000000000036,
+          "lambda": 0.0,
+          "combined_dual": 3.8300000000000036,
+          "support": 134.68382464358743,
+          "shape_contribution_norm": 935.0757995155792,
+          "size_contribution": 1.3998593908617938,
+          "total_contribution": 936.475658906441
+        },
+        {
+          "zone": 10,
+          "label": "Zone 10",
+          "mu": 8.140000000000004,
+          "lambda": 0.0,
+          "combined_dual": 8.140000000000004,
+          "support": 152.7991928705027,
+          "shape_contribution_norm": 2254.6444651535608,
+          "size_contribution": 3.375325539635243,
+          "total_contribution": 2258.0197906931962
+        }
+      ],
+      "dominant_zone": 5,
+      "dominant_zones": [
+        5,
+        7,
+        10
+      ],
+      "semi_a": 216.78332522014622,
+      "semi_b": 105.80134607635243,
+      "angle": 1.5668936453750586,
+      "nn_backprop_summary": {
+        "batch_size": 8,
+        "rho_hat": 368.4934728104191,
+        "avg_grad_norm": 8425.57156234317,
+        "dominant_zones": [
+          5,
+          7,
+          10
+        ],
+        "sample_summaries": [
+          {
+            "sample_index": 5176,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 4240,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 4888,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 5032,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 4528,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 4577,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 4887,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          },
+          {
+            "sample_index": 5416,
+            "cost": 95918.31939346978,
+            "dominant_zones": [
+              5,
+              7,
+              10
+            ],
+            "top_zone": 5,
+            "reserve_total": 1024.735837195651
+          }
+        ]
+      }
+    },
+    {
+      "label": "storm",
+      "context": {
+        "load": 1.3199057329369688,
+        "solar": 1.625396943510252,
+        "wind": 1.925029898009219,
+        "hour": 11,
+        "month": 12
+      },
+      "L_2d": [
+        [
+          0.22214663080946126,
+          0.0
+        ],
+        [
+          0.004802969502724138,
+          0.42880470103893975
+        ]
+      ],
+      "rho": 368.4934728104191,
+      "coverage": 0.7916666666666666,
+      "cost": 94499.40900781263,
+      "energy_cost": 90679.03605028079,
+      "reserve_cost": 3820.372957531852,
+      "reserves_per_zone": [
+        38.99288730422565,
+        36.428971426687525,
+        45.03106940782248,
+        49.40909004469412,
+        81.85955039455544,
+        22.687665652423608,
+        158.021648781131,
+        124.49357721365625,
+        103.31662263911772,
+        117.2130104794669
+      ],
+      "mu_z": [
+        6.539999999999997,
+        4.119999999999998,
+        4.54,
+        4.84,
+        5.78,
+        5.0,
+        6.19,
+        5.05,
+        2.9000000000000004,
+        7.21
+      ],
+      "lambda_z": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "combined_duals": [
+        6.539999999999997,
+        4.119999999999998,
+        4.54,
+        4.84,
+        5.78,
+        5.0,
+        6.19,
+        5.05,
+        2.9000000000000004,
+        7.21
+      ],
+      "support_points_2d": [
+        {
+          "zone": 1,
+          "x": 0.33435820371913283,
+          "y": -6.0402613999538115,
+          "support": 38.99288730422565
+        },
+        {
+          "zone": 2,
+          "x": 0.33435820371913305,
+          "y": -6.040261399953806,
+          "support": 36.428971426687525
+        },
+        {
+          "zone": 3,
+          "x": 3.360311453924653,
+          "y": 0.930962322997313,
+          "support": 45.03106940782248
+        },
+        {
+          "zone": 4,
+          "x": 3.3603114539246537,
+          "y": 0.9309623229973186,
+          "support": 49.40909004469412
+        },
+        {
+          "zone": 5,
+          "x": 81.85961486689722,
+          "y": 1.7698636267626868,
+          "support": 81.85955039455544
+        },
+        {
+          "zone": 6,
+          "x": 81.85961486689712,
+          "y": 1.769863626762697,
+          "support": 22.687665652423608
+        },
+        {
+          "zone": 7,
+          "x": 0.9168379260941597,
+          "y": 158.02164056187746,
+          "support": 158.021648781131
+        },
+        {
+          "zone": 8,
+          "x": 0.9168379260941562,
+          "y": 158.02164056187746,
+          "support": 124.49357721365625
+        },
+        {
+          "zone": 9,
+          "x": -0.6914634828376012,
+          "y": 10.689268438192485,
+          "support": 103.31662263911772
+        },
+        {
+          "zone": 10,
+          "x": -0.6914634828376007,
+          "y": 10.689268438192483,
+          "support": 117.2130104794669
+        }
+      ],
+      "zone_contributions": [
+        {
+          "zone": 1,
+          "label": "Zone 1",
+          "mu": 6.539999999999997,
+          "lambda": 0.0,
+          "combined_dual": 6.539999999999997,
+          "support": 38.99288730422565,
+          "shape_contribution_norm": 1245.9359333509221,
+          "size_contribution": 0.692043419452463,
+          "total_contribution": 1246.6279767703745
+        },
+        {
+          "zone": 2,
+          "label": "Zone 2",
+          "mu": 4.119999999999998,
+          "lambda": 0.0,
+          "combined_dual": 4.119999999999998,
+          "support": 36.428971426687525,
+          "shape_contribution_norm": 733.2915719841556,
+          "size_contribution": 0.4072999207645906,
+          "total_contribution": 733.6988719049201
+        },
+        {
+          "zone": 3,
+          "label": "Zone 3",
+          "mu": 4.54,
+          "lambda": 0.0,
+          "combined_dual": 4.54,
+          "support": 45.03106940782248,
+          "shape_contribution_norm": 1128.1223394599988,
+          "size_contribution": 0.554802378322435,
+          "total_contribution": 1128.6771418383212
+        },
+        {
+          "zone": 4,
+          "label": "Zone 4",
+          "mu": 4.84,
+          "lambda": 0.0,
+          "combined_dual": 4.84,
+          "support": 49.40909004469412,
+          "shape_contribution_norm": 1319.5939112699616,
+          "size_contribution": 0.6489667075849433,
+          "total_contribution": 1320.2428779775466
+        },
+        {
+          "zone": 5,
+          "label": "Zone 5",
+          "mu": 5.78,
+          "lambda": 0.0,
+          "combined_dual": 5.78,
+          "support": 81.85955039455544,
+          "shape_contribution_norm": 2358.465448151139,
+          "size_contribution": 1.284007007429284,
+          "total_contribution": 2359.7494551585683
+        },
+        {
+          "zone": 6,
+          "label": "Zone 6",
+          "mu": 5.0,
+          "lambda": 0.0,
+          "combined_dual": 5.0,
+          "support": 22.687665652423608,
+          "shape_contribution_norm": 565.4473101200844,
+          "size_contribution": 0.3078435213436719,
+          "total_contribution": 565.755153641428
+        },
+        {
+          "zone": 7,
+          "label": "Zone 7",
+          "mu": 6.19,
+          "lambda": 0.0,
+          "combined_dual": 6.19,
+          "support": 158.021648781131,
+          "shape_contribution_norm": 1804.3059297607908,
+          "size_contribution": 2.6544676585314644,
+          "total_contribution": 1806.9603974193224
+        },
+        {
+          "zone": 8,
+          "label": "Zone 8",
+          "mu": 5.05,
+          "lambda": 0.0,
+          "combined_dual": 5.05,
+          "support": 124.49357721365625,
+          "shape_contribution_norm": 1159.6882658473758,
+          "size_contribution": 1.7061158780752976,
+          "total_contribution": 1161.394381725451
+        },
+        {
+          "zone": 9,
+          "label": "Zone 9",
+          "mu": 2.9000000000000004,
+          "lambda": 0.0,
+          "combined_dual": 2.9000000000000004,
+          "support": 103.31662263911772,
+          "shape_contribution_norm": 708.0208403642762,
+          "size_contribution": 0.8130895870917846,
+          "total_contribution": 708.833929951368
+        },
+        {
+          "zone": 10,
+          "label": "Zone 10",
+          "mu": 7.21,
+          "lambda": 0.0,
+          "combined_dual": 7.21,
+          "support": 117.2130104794669,
+          "shape_contribution_norm": 1997.0499500930175,
+          "size_contribution": 2.2934078020745368,
+          "total_contribution": 1999.3433578950921
+        }
+      ],
+      "dominant_zone": 5,
+      "dominant_zones": [
+        5,
+        10,
+        7
+      ],
+      "semi_a": 158.02528010173182,
+      "semi_b": 81.8525660777161,
+      "angle": 1.5628669730557843,
+      "nn_backprop_summary": {
+        "batch_size": 8,
+        "rho_hat": 368.4934728104191,
+        "avg_grad_norm": 5210.1064438512285,
+        "dominant_zones": [
+          10,
+          1,
+          7
+        ],
+        "sample_summaries": [
+          {
+            "sample_index": 2532,
+            "cost": 94110.66806822967,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 705.4360941430535
+          },
+          {
+            "sample_index": 5771,
+            "cost": 94533.8435571333,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 783.832338996062
+          },
+          {
+            "sample_index": 5773,
+            "cost": 94674.73691499222,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 809.9277880104437
+          },
+          {
+            "sample_index": 5772,
+            "cost": 94711.02974586979,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 816.6493105533525
+          },
+          {
+            "sample_index": 3733,
+            "cost": 94630.03413375278,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 801.6481036809164
+          },
+          {
+            "sample_index": 3899,
+            "cost": 94713.61461473533,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 817.1279713354716
+          },
+          {
+            "sample_index": 6803,
+            "cost": 94221.40863835604,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 725.9539068430831
+          },
+          {
+            "sample_index": 2533,
+            "cost": 94417.79818732085,
+            "dominant_zones": [
+              5,
+              10,
+              7
+            ],
+            "top_zone": 5,
+            "reserve_total": 762.3357554150847
+          }
+        ]
+      }
+    }
+  ]
+}

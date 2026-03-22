@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differentiable Robust Optimization with Conformal Coverage</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    />
+    <link rel="stylesheet" href="./style.css?v=20260321t" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script type="module" src="./src/app.js?v=20260321t"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="deck-stage" class="deck-stage">
+        <header class="frame-header">
+          <div id="frame-title" class="frame-title"></div>
+        </header>
+        <div class="frame-progress">
+          <span id="frame-progress-fill" class="frame-progress__fill"></span>
+        </div>
+        <main class="frame-body">
+          <section id="slide-content" class="slide-content"></section>
+          <canvas id="appendix-canvas" class="appendix-canvas" aria-hidden="true"></canvas>
+        </main>
+        <footer class="frame-footer">
+          <div id="frame-foot-left" class="frame-footer__left">Differentiable Robust Optimization with Conformal Coverage</div>
+          <div id="frame-label" class="frame-footer__right"></div>
+        </footer>
+      </div>
+
+      <nav class="deck-controls" aria-label="Slide navigation">
+        <button id="btn-prev" class="deck-button" type="button" aria-label="Previous slide">
+          &#8592;
+        </button>
+        <button id="btn-next" class="deck-button" type="button" aria-label="Next slide">
+          &#8594;
+        </button>
+      </nav>
+    </div>
+  </body>
+</html>

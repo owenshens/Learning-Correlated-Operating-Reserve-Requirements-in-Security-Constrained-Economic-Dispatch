@@ -6,6 +6,10 @@ This repository accompanies the preprint *Learning Correlated Operating Reserve 
 
 - `Experiment/`
   - reproducibility package for the numerical experiments
+- `WebPresentation/`
+  - editable source for the web presentation
+- `docs/`
+  - GitHub Pages publish target for the web presentation
 - `Paper/preprint.tex`
   - LaTeX source of the preprint
 - `Paper/reference.bib`
@@ -38,6 +42,28 @@ python run_block_bootstrap_coupled.py
 ```
 
 Generated outputs are written to `Experiment/data/`.
+
+## Web Presentation
+
+The repository also includes a static web presentation for the project.
+
+- Edit the presentation source in `WebPresentation/`
+- Publish the GitHub Pages version from `docs/`
+
+To refresh the deploy folder after updating `WebPresentation/`, run:
+
+```bash
+./scripts/sync_webpresentation_to_docs.sh
+```
+
+This repository is configured to work with GitHub Pages using:
+
+- branch: `main`
+- folder: `/docs`
+
+Once GitHub Pages is enabled in the repository settings, the live site URL is:
+
+`https://owenshens.github.io/Learning-Correlated-Operating-Reserve-Requirements-in-Security-Constrained-Economic-Dispatch/`
 
 ## Script Guide
 

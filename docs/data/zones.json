@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "name": "Zone 1",
+    "buses": "1-12",
+    "num_buses": 12,
+    "load_mw": 365.0,
+    "num_generators": 6,
+    "region": "R1",
+    "uncertainty_sources": [
+      "load"
+    ],
+    "x": 0.15,
+    "y": 0.75
+  },
+  {
+    "id": 2,
+    "name": "Zone 2",
+    "buses": "13-24",
+    "num_buses": 12,
+    "load_mw": 341.0,
+    "num_generators": 4,
+    "region": "R1",
+    "uncertainty_sources": [
+      "load"
+    ],
+    "x": 0.35,
+    "y": 0.8
+  },
+  {
+    "id": 3,
+    "name": "Zone 3",
+    "buses": "25-36",
+    "num_buses": 12,
+    "load_mw": 360.0,
+    "num_generators": 7,
+    "region": "R2",
+    "uncertainty_sources": [
+      "load",
+      "solar"
+    ],
+    "x": 0.55,
+    "y": 0.78
+  },
+  {
+    "id": 4,
+    "name": "Zone 4",
+    "buses": "37-48",
+    "num_buses": 12,
+    "load_mw": 395.0,
+    "num_generators": 3,
+    "region": "R2",
+    "uncertainty_sources": [
+      "load",
+      "solar"
+    ],
+    "x": 0.75,
+    "y": 0.72
+  },
+  {
+    "id": 5,
+    "name": "Zone 5",
+    "buses": "49-60",
+    "num_buses": 12,
+    "load_mw": 801.0,
+    "num_generators": 5,
+    "region": "R3",
+    "uncertainty_sources": [
+      "load",
+      "solar"
+    ],
+    "x": 0.9,
+    "y": 0.6
+  },
+  {
+    "id": 6,
+    "name": "Zone 6",
+    "buses": "61-72",
+    "num_buses": 12,
+    "load_mw": 222.0,
+    "num_generators": 7,
+    "region": "R3",
+    "uncertainty_sources": [
+      "load",
+      "solar"
+    ],
+    "x": 0.1,
+    "y": 0.35
+  },
+  {
+    "id": 7,
+    "name": "Zone 7",
+    "buses": "73-84",
+    "num_buses": 12,
+    "load_mw": 575.0,
+    "num_generators": 5,
+    "region": "R4",
+    "uncertainty_sources": [
+      "load",
+      "wind"
+    ],
+    "x": 0.3,
+    "y": 0.25
+  },
+  {
+    "id": 8,
+    "name": "Zone 8",
+    "buses": "85-96",
+    "num_buses": 12,
+    "load_mw": 453.0,
+    "num_generators": 6,
+    "region": "R4",
+    "uncertainty_sources": [
+      "load",
+      "wind"
+    ],
+    "x": 0.5,
+    "y": 0.22
+  },
+  {
+    "id": 9,
+    "name": "Zone 9",
+    "buses": "97-108",
+    "num_buses": 12,
+    "load_mw": 342.0,
+    "num_generators": 6,
+    "region": "R5",
+    "uncertainty_sources": [
+      "load",
+      "wind"
+    ],
+    "x": 0.7,
+    "y": 0.28
+  },
+  {
+    "id": 10,
+    "name": "Zone 10",
+    "buses": "109-118",
+    "num_buses": 10,
+    "load_mw": 388.0,
+    "num_generators": 5,
+    "region": "R5",
+    "uncertainty_sources": [
+      "load",
+      "wind"
+    ],
+    "x": 0.88,
+    "y": 0.38
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "scenes": [
+    {
+      "id": 0,
+      "text": "118-bus power system, 10 zones. Generation must meet load, and reserves must protect against correlated forecast uncertainty."
+    },
+    {
+      "id": 1,
+      "text": "Forecast errors have structure. A diagonal box wastes capacity on unlikely directions. Our learned shape is tighter where it counts."
+    },
+    {
+      "id": 2,
+      "text": "Each zone sees uncertainty through an exposure direction. The reserve requirement is the support function: worst-case reach of the uncertainty shape."
+    },
+    {
+      "id": 3,
+      "text": "Reserves are not free. The system rebalances around them. Shadow prices reveal where protection hurts the objective the most."
+    },
+    {
+      "id": 4,
+      "text": "The gradient flows backward. Dual multipliers from constrained zones reshape the uncertainty set to reduce downstream cost."
+    },
+    {
+      "id": 5,
+      "text": "Over training, the ellipsoid shrinks. Cost drops $4.5K/hr, reserves drop 47%, while maintaining 96.7% coverage."
+    },
+    {
+      "id": 6,
+      "text": "Four methods, same data. At every coverage level, the learned method achieves lower operating cost."
+    },
+    {
+      "id": 7,
+      "text": null
+    }
+  ]
+}
