@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the preprint below."
+title: "Learning Correlated Operating Reserve Requirements in Security-Constrained Economic Dispatch"
+type: software
+authors:
+  - family-names: "Shen"
+    given-names: "Owen"
+  - family-names: "Chao"
+    given-names: "Hung-po"
+  - family-names: "Lu"
+    given-names: "Haihao"
+  - family-names: "Jaillet"
+    given-names: "Patrick"
+repository-code: "https://github.com/owenshens/Learning-Correlated-Operating-Reserve-Requirements-in-Security-Constrained-Economic-Dispatch"
+preferred-citation:
+  type: article
+  title: "Learning Correlated Operating Reserve Requirements in Security-Constrained Economic Dispatch"
+  authors:
+    - family-names: "Shen"
+      given-names: "Owen"
+    - family-names: "Chao"
+      given-names: "Hung-po"
+    - family-names: "Lu"
+      given-names: "Haihao"
+    - family-names: "Jaillet"
+      given-names: "Patrick"
+  year: 2026
+  journal: "Preprint"
+  url: "https://github.com/owenshens/Learning-Correlated-Operating-Reserve-Requirements-in-Security-Constrained-Economic-Dispatch"

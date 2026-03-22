@@ -4,9 +4,31 @@ __pycache__/
 
 # Raw data (too large for git, ~256MB)
 Experiment/raw_data/
+Experiment/Experiment Design.md
 
 # Claude Code local config
 .claude/
 
+# Not part of the paper-facing public release
+GradientDemo/
+Presentation/
+VisualizationBlueprint/
+Paper/*
+!Paper/reference.bib
+!Paper/preprint.tex
+
 # OS files
 .DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
