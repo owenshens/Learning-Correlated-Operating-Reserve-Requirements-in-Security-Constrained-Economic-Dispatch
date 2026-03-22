@@ -1,10 +1,8 @@
 # Tuning Utilities
 
-This folder contains development and hyperparameter-tuning scripts used to calibrate the contextual model and diagnose smoothing/quantile behavior.
+This directory contains supplementary scripts used for model selection and diagnostic analysis of the contextual method.
 
-These scripts are not required to rerun the main paper tables, but they are included for completeness and transparency.
-
-The public paper-facing scripts are:
+These utilities are not required to reproduce the main paper tables. The primary experiment entry points are:
 
 - `../run_experiment.py`
 - `../run_coupled_experiment.py`

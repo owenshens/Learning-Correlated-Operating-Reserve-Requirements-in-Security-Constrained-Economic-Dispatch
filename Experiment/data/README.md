@@ -1,6 +1,6 @@
 # Data Bundle
 
-This folder contains the data and saved outputs required to reproduce the results reported in the preprint.
+This directory contains the processed data and saved outputs required to reproduce the results reported in the preprint.
 
 ## Layout
 
@@ -30,8 +30,8 @@ This folder contains the data and saved outputs required to reproduce the result
 
 ## Size Note
 
-The largest artifact in the release is:
+The largest artifact in this directory is:
 
 - `uncertainty/L_true_t.npy`
 
-It is included because it is part of the released experiment bundle used for benchmarking against the ground-truth uncertainty geometry.
+It is included as part of the benchmark dataset used to evaluate recovery of the underlying uncertainty geometry.
